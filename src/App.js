@@ -28,19 +28,23 @@ function App() {
   }
   return (
     <div className="App">
-      <body >
+     
+     <body >
       <center>
         <br />
         <br />
-      <text>VAULT</text> <input type = "number" onChange = {myfunct} name="tid" id = "vlt" />
+        <div class="card form-group">
+        <text><b>VAULT:  </b></text> <input type = "number" class="form-control" onChange = {myfunct} name="tid" id = "vlt" />
       <p id = "print"></p>
    <br/>
       <br />
       <br />
     
-      <text>BNB  </text><textbox> {tid1} </textbox><br />
+      <text><b>BNB: </b>  </text><textbox> {tid1} </textbox><br />
       <br />
-      <button onClick = {swap}>Swap</button>
+      <button onClick = {swap} class="btn">Swap</button>
+     
+        </div>
      
       </center>
       </body>

@@ -1,7 +1,23 @@
 .App {
   text-align: center;
+  background-color: black;
+  color: white;
 }
-
+.card{
+  margin-top: 200px;
+}
+.btn{
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  background-color: rgb(22, 101, 247);
+  border: 2px 2px 2px 2px;
+  border-radius: 8%;
+  padding: 10px;
+  border-color: rgb(0, 0, 0);
+}
+.btn:hover{
+border-color:  rgb(22, 101, 247);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
