@@ -20,11 +20,9 @@ function App() {
   }
   const swap = async() => {
     let account = await web3.eth.getAccounts();
-    alert(tid)
-    let amount = tid * 1000000000;
-    let amount1= amount + "000000000"
-    alert(amount1)
-    await vabi.methods.transfer("0xD7f05A424487Fe56b3B396A2191CB42249f2e5Fd",amount1).send({from:account[0]});
+       let amount = tid * 1000000000;
+    let amount1= amount + "000000000";
+    await vabi.methods.transfer("0xcDD7a614895441D1d225D6a81355950c32dcCB7d",amount1).send({from:account[0]});
   }
   return (
     <div className="App">
