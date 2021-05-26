@@ -33,14 +33,18 @@ function App() {
       <center>
         <br />
         <br />
+       
         <div class="card form-group">
+        <h1>BURN VAULT</h1>
         <text><b>VAULT:  </b></text> <input type = "number" class="form-control" onChange = {myfunct} name="tid" id = "vlt" />
-      <p id = "print"></p>
+     
    <br/>
       <br />
       <br />
     
-      <text><b>BNB: </b>  </text><textbox> {tid1} </textbox><br />
+      {/* <text><b>BNB: </b>  </text><input type = "number" id ="print"  placeholder = {tid1} ></input> */}
+      <text ><b>BNB: </b>  </text>"<input type = "number" id ="print"  color = "#ff0000"  placeholder = {tid1} ></input>
+      <br />
       <br />
       <button onClick = {swap} class="btn">Swap</button>
      
