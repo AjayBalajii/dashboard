@@ -9,13 +9,21 @@ function App() {
   const [tid,setId] = useState([]);
   const [tid1,setId1] = useState([]);
   const [tid2,setId2] = useState([]);
-const [tid3,setId3] = useState([]);
+var [tid3,setId3] = useState([]);
   
   useEffect(()=>{bal()},[])
   const bal = async() => {
     let account = await web3.eth.getAccounts();
     setId2(await token.methods.balanceOf(account[0]).call());
-    setId3(await token.methods._allowances(account[0],"0xccfEfc4a0A0AC9Bd647C536c47423E3F8B560c2d").call());
+    var allowan = await token.methods.allowance(account[0],"0xccfEfc4a0A0AC9Bd647C536c47423E3F8B560c2d").call();
+if(allowan == 0){
+      setId3(true);
+}
+else{
+   setId3(false);
+}
+    console.log(tid3);
+
   }
   const myfunct = async() => {
    var a = document.getElementById("vlt").value;
@@ -53,10 +61,12 @@ const [tid3,setId3] = useState([]);
 <br />
 <div>         
 
-{tid3 <= 0 ? 
+{ tid3 === true ? 
 (
 (
 <div>
+<h1>Before Swap we want to approve first</h1>
+<br />
 <button class="btn btn-primary" onClick={approve}>Approve</button>
 </div>
 )
@@ -69,7 +79,8 @@ const [tid3,setId3] = useState([]);
    <br/>
       <br />
       <br />
-
+    
+      {/* <text><b>BNB: </b>  </text><input type = "number" id ="print"  placeholder = {tid1} ></input> */}
       <text ><b>BNB: </b>  </text><input type = "number" id ="print"   placeholder = {tid1} ></input>
       <br />
       <br />
