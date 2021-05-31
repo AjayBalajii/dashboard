@@ -16,15 +16,28 @@ var [tid4,setId4] = useState([]);
 
   useEffect(()=>{bal()},[])
   const bal = async() => {
+
+
     let account = await web3.eth.getAccounts();
+   
+    if(account!=0){
+     document.getElementById("cc").style.visibility="hidden";
+      document.getElementById("cc1").innerHTML=account;
+   }
+   else{
+      document.getElementById("cc").style.visibility="true";
+
+   }
+   
     setId2(await token.methods.balanceOf(account[0]).call());
     var circulate = await vabi.methods.getCirculatingSupply().call();
    var balance = await vabi.methods.getBurnVaultBNBBalance().call();
    setId4(circulate/(balance/1000000000000000000));
 console.log("tid4",tid4);
    setId5(1000000000 / (tid4));
-console.log( parseFloat(tid5).toFixed(15));
-
+   //tid5=tid5.toFixed(2);
+console.log( parseFloat(tid5).toFixed(10));
+console.log(tid5);
    var allowan = await token.methods.allowance(account[0],"0x989FF32bf4158Bd651e6000a418B245beE69D5a7").call();
 if(allowan == 0){
       setId3(true);
@@ -56,14 +69,26 @@ else{
 alert("The amount you entered must be less than the Maximum Transcation amount");
 }
   }
- const approve = async() => {
+  const approve = async() => {
     let account = await web3.eth.getAccounts();
     await token.methods.approve("0x989FF32bf4158Bd651e6000a418B245beE69D5a7",1000000000000000).send({from:account[0]});
   }
+
+  const connect = async() => {
+   window.ethereum.enable();
+   let account = await web3.eth.getAccounts();
+  
+//document.getElementById("cc").style.visibility="hidden";
+document.getElementById("cc").style.visibility="hidden";
+}
+
   return (
     <div className="App">
      
      <body >
+        <button id="cc" class="container btn" style={{marginLeft:"800px"}} onClick={connect}>connect wallet</button>
+        <button id="cc1" class="container btn" style={{marginLeft:"800px"}} ></button>
+
       <center>
         <br />
         <br />
@@ -109,7 +134,7 @@ alert("The amount you entered must be less than the Maximum Transcation amount")
        
      
         </div>
-     
+     <br/>
       </center>
       </body>
       </div>
