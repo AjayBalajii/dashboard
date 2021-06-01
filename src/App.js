@@ -29,8 +29,8 @@ var [tid4,setId4] = useState([]);
      var balance = await vabi.methods.getBurnVaultBNBBalance().call();
      setId4(circulate/(balance/1000000000000000000));
      setId5(1000000000 / (tid4));
-   //tid5=tid5.toFixed(2);
-     console.log(parseFloat (tid5).toFixed(15));
+   
+    
      var allowan = await token.methods.allowance(account[0],"0x989FF32bf4158Bd651e6000a418B245beE69D5a7").call();
      if(allowan == 0){
       setId3(true);
@@ -51,14 +51,14 @@ var [tid4,setId4] = useState([]);
    var a = document.getElementById("vlt").value;
    setId(a);
   
-  var b = (a)/tid4;
+  var b =   (a * 1000000000) / tid4;
  
-  setId1(document.getElementById("print").innerHTML = b);
+  setId1(document.getElementById("print").innerHTML = b );
   
 
   }
   const swap = async() => {
-     if(tid <11){
+     if(tid < 11){
     let account = await web3.eth.getAccounts();
        let amount = tid * 1000000000;
     
@@ -100,7 +100,7 @@ document.getElementById("cc").style.visibility="hidden";
 <text><b>Available Black Token in BurnVault   :  {tid6/1000000000}</b></text><br /><br />
 <br />
 
-<text class="btn">1 Black = { parseFloat (tid5).toFixed(15)} BNB  </text><br /><br />
+<text class="btn">1 Black = { parseFloat(1000000000/ tid4).toFixed(15)} BNB  </text><br /><br />
 <br /><br />
 
 <div>         
@@ -124,8 +124,8 @@ document.getElementById("cc").style.visibility="hidden";
       <br />
       <br />
     
-      {/* <text><b>BNB: </b>  </text><input type = "number" id ="print"  placeholder = {tid1} ></input> */}
-      <text ><b>BNB: </b>  </text><input type = "number" id ="print"   placeholder = {tid1} ></input>
+     
+      <text ><b>BNB: </b>  </text><input type = "string" id ="print"  placeholder = { parseFloat(tid1).toFixed(15)} ></input>
       <br />
       <br />
       <button onClick = {swap} class="btn">Swap</button>
