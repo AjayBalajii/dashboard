@@ -23,30 +23,29 @@ var [tid4,setId4] = useState([]);
     if(account!=0){
      document.getElementById("cc").style.visibility="hidden";
       document.getElementById("cc1").innerHTML=account;
-   }
+
+     setId2(await token.methods.balanceOf(account[0]).call());
+     var circulate = await vabi.methods.getCirculatingSupply().call();
+     var balance = await vabi.methods.getBurnVaultBNBBalance().call();
+     setId4(circulate/(balance/1000000000000000000));
+     setId5(1000000000 / (tid4));
+   //tid5=tid5.toFixed(2);
+     console.log(parseFloat (tid5).toFixed(15));
+     var allowan = await token.methods.allowance(account[0],"0x989FF32bf4158Bd651e6000a418B245beE69D5a7").call();
+     if(allowan == 0){
+      setId3(true);
+      }
+      else{
+   setId3(false);
+      }
+      console.log(tid3);
+      setId6(await vabi.methods.getBurnVaultBLACKBalance().call());
+      }
    else{
       document.getElementById("cc").style.visibility="true";
 
    }
    
-    setId2(await token.methods.balanceOf(account[0]).call());
-    var circulate = await vabi.methods.getCirculatingSupply().call();
-   var balance = await vabi.methods.getBurnVaultBNBBalance().call();
-   setId4(circulate/(balance/1000000000000000000));
-console.log("tid4",tid4);
-   setId5(1000000000 / (tid4));
-   //tid5=tid5.toFixed(2);
-console.log( parseFloat(tid5).toFixed(10));
-console.log(tid5);
-   var allowan = await token.methods.allowance(account[0],"0x989FF32bf4158Bd651e6000a418B245beE69D5a7").call();
-if(allowan == 0){
-      setId3(true);
-}
-else{
-   setId3(false);
-}
-    console.log(tid3);
- setId6(await vabi.methods.getBurnVaultBLACKBalance().call());
   }
   const myfunct = async() => {
    var a = document.getElementById("vlt").value;
@@ -93,14 +92,17 @@ document.getElementById("cc").style.visibility="hidden";
         <br />
         <br />
        <h1>BURN VAULT</h1>
-        <div class="card form-group">
+       <br /><br />
+        <div >
 <br />
-         <text><b>Balance of my Black Token:{tid2/1000000000}</b></text>
+         <text ><b>Balance of my Black Token : {tid2/1000000000}</b></text>
 <br /><br />
-<text>1 Black = { parseFloat (tid5).toFixed(15)} BNB  </text><br /><br />
+<text><b>Available Black Token in BurnVault   :  {tid6/1000000000}</b></text><br /><br />
 <br />
-<text><b>BurnVault Black Token:{tid6/1000000000}</b></text><br /><br />
+
+<text class="btn">1 Black = { parseFloat (tid5).toFixed(15)} BNB  </text><br /><br />
 <br /><br />
+
 <div>         
 
 { tid3 === true ? 
