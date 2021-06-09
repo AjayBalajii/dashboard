@@ -1,6 +1,6 @@
 import web3 from "./web3";
 
-const address =  '0x4Ee1E691Be5aBD36e803b6519470D92BB193B518';
+const address =  '0x44f610E85fBD3e02cE03e0e4216D6aFc81509988';
 
 
 const abi =[
@@ -233,29 +233,6 @@ const abi =[
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "spender",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "_approve",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"name": "_blockFreeze",
 		"outputs": [
@@ -282,25 +259,6 @@ const abi =[
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "_cakeLPPair",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -338,14 +296,8 @@ const abi =[
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "_getCakeLPPair",
+		"inputs": [],
+		"name": "_getBurnVault",
 		"outputs": [
 			{
 				"internalType": "address",
@@ -524,13 +476,6 @@ const abi =[
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "_removeFromPancakeswap",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -571,9 +516,9 @@ const abi =[
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "uint128",
 				"name": "burnFee",
-				"type": "uint256"
+				"type": "uint128"
 			}
 		],
 		"name": "_setBurnFeeExternal",
@@ -584,22 +529,9 @@ const abi =[
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "cakeLPPair",
-				"type": "address"
-			}
-		],
-		"name": "_setCakeLPPair",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
+				"internalType": "uint128",
 				"name": "taxFee",
-				"type": "uint256"
+				"type": "uint128"
 			}
 		],
 		"name": "_setTaxFee",
@@ -610,9 +542,22 @@ const abi =[
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "address",
+				"name": "_treasuryaddress",
+				"type": "address"
+			}
+		],
+		"name": "_setTreasuryAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint128",
 				"name": "treasuryFee",
-				"type": "uint256"
+				"type": "uint128"
 			}
 		],
 		"name": "_setTreasuryFee",
@@ -741,25 +686,6 @@ const abi =[
 		"name": "blackfi",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "__address",
-				"type": "address"
-			}
-		],
-		"name": "checkIfPancakeSwapAddress",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -931,6 +857,19 @@ const abi =[
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "_burnVault",
+				"type": "address"
+			}
+		],
+		"name": "setBurnVault",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "gAddress",
 				"type": "address"
 			},
@@ -948,9 +887,9 @@ const abi =[
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "uint128",
 				"name": "liquidityFee",
-				"type": "uint256"
+				"type": "uint128"
 			}
 		],
 		"name": "setLiquidityFee",
@@ -1184,6 +1123,24 @@ const abi =[
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_target",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
