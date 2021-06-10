@@ -25,6 +25,12 @@ for(var i =0;i<= length;i++){
     console.log(item.blockNumber);
    if(item.blockNumber == 9574548){
        setId1(item.to); 
+       /*
+       var d= new Date(0);
+       d.setUTCSeconds(tid1);
+       alert(d);//d has the date and time
+       
+       */ 
     }
   } 
 var d = c[0];
