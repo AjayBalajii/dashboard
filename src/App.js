@@ -6,80 +6,63 @@ import web3 from './web3';
 import token from './token.js';
 import Black from './black.js';
 import Vault from './Vaultpage.js';
-import { Router, Route, Switch } from "react-router-dom";
-import history from "./utils/history";
+import {BrowserRouter as Router , Route , Link , Switch , NavLink} from "react-router-dom";
+//import history from "./utils/history";
+import vault from './vault.js';
+import { Navbar } from 'react-bootstrap';
+import { Button,ButtonGroup } from 'react-bootstrap';
+
 
 function App() {
+
+      
+
   
   return (
-    <div className="App">
-    
-     <br/>
-<br/>
-
-
-              <br></br>
-<br></br>
-
-      <center>
-        <br />
-        <br />
-       <h1>BURN VAULT</h1>
-<button
-                class="btn btn-info btn-block"
-                type="button"
-                onClick={() => {
-                  history.push("/Black");
-                }}>
-                Go Deploy Page 
-              </button>
-<button
-                class="btn btn-info btn-block"
-                type="button"
-                onClick={() => {
-                  history.push("/Vault");
-                }}>
-                Go vault Page 
-              </button>
-
-       <br /><br />
-        <div >
-<br />
-<br /><br />
-
-
-<div>         
-
-
-    </div> 
-       
      
-        </div>
-     <br/>
-      </center>
+   <div class="bg-dark">
+ 
+        
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"/>
 
-<br></br>
-<br></br>
+   <div>
+   <Router>
+     <Navbar className="bg">
+     <Navbar.Brand href="#">
+ 
+   
+   <Link class="navlink"  exact to="/Black">
+
+BlackCollateral Page 
+
+</Link>
+ 
+ <Link class="navlink"  exact to="/vault">
+Burn Vault{' '}
+       </Link>
+
+ 
+</Navbar.Brand>
+<Navbar.Collapse className="justify-content-end">
+
+
+ </Navbar.Collapse>
+ </Navbar>
+     <Switch>
+<Route exact path='/Black' component={Black}/>
+<Route exact path='/vault' component={Vault}/>
+ 
+</Switch>
+
+</Router>
 
 
 
-                    
-                    
 
-            <Router history={history}>
-          <Switch>
-            
-            <Route path="/Black">
-              <Black />
-            </Route>
-             <Route path="/Vault">
-              <Vault />
-            </Route>
-            
-          </Switch>
-        </Router>
-      
-      </div>
+
+</div>
+</div>
   );
 }
 
