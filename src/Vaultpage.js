@@ -34,7 +34,7 @@ var [tid4,setId4] = useState([]);
      setId5(1000000000 / (tid4));
    
     
-     var allowan = await token.methods.allowance(account[0],"0xDE949e5CC31062c71aD5180f050eE3b7C9f79037").call();
+     var allowan = await token.methods.allowance(account[0],"0x4783aD97Df0C00C2ef8305F94885bA0Ff7c20547").call();
      if(allowan == 0){
       setId3(true);
       }
@@ -73,7 +73,7 @@ alert("The amount you entered must be less than the Maximum Transcation amount")
   }
   const approve = async() => {
     let account = await web3.eth.getAccounts();
-    await token.methods.approve("0xDE949e5CC31062c71aD5180f050eE3b7C9f79037",1000000000000000).send({from:account[0]});
+    await token.methods.approve("0x4783aD97Df0C00C2ef8305F94885bA0Ff7c20547",1000000000000000).send({from:account[0]});
   }
 
   const connect = async() => {
@@ -127,14 +127,14 @@ document.getElementById("cc").style.visibility="hidden";
 (
 (
 <div>
- <text><b>Black:  </b></text> <input type = "number"  class="form-control" onChange = {myfunct} name="tid" id = "vlt" />
+ <text><b>Black:  </b></text> <input type = "number"  width = "50%" onChange = {myfunct} name="tid" id = "vlt" />
      
    <br/>
       <br />
       <br />
     
      
-      <text ><b>BNB: </b>  </text><input type = "string" id ="print"  placeholder = { parseFloat(tid1).toFixed(15)} ></input>
+      <text ><b>BNB: </b>  </text><input type = "string" id ="print"  placeholder = { parseFloat(tid1).toFixed(20)} ></input>
       <br />
       <br />
       <button onClick = {swap} class="btn">Swap</button>
