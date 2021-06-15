@@ -14,11 +14,16 @@ function NewfileMar() {
   const [dates,setId8] = useState("");
   const [lock,setId3] = useState("");
   const [locktime,setId6] = useState("");
+   const [con, setId5] = useState("");
+   const[acc,setId9] = useState("");
+   const[t1,setTim1 ] = useState("");
+ const[t2,setTim2] = useState("");
+ const[t3,setTim3 ] = useState("");
 
+let account =  web3.eth.getAccounts();
 
   const bal = async() => {
     let account = await web3.eth.getAccounts();
-console.log(account[0]);
 
 //Returns the Balance of account
  const a = await token.methods.balanceOf(account[0]).call();
@@ -30,8 +35,9 @@ console.log(account[0]);
         const b = await token.methods._secondsLeft(account[0]).call();
        setId1(b);
 
+console.log("locktime",b);
 //timing concept
-   var timestamp = tid1
+   var timestamp = b;
 
 
 var hours = Math.floor(timestamp / 60 / 60);
@@ -45,36 +51,26 @@ var seconds = timestamp % 60;
 var formatted = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
 
 setId6(formatted);
-console.log(formatted);
+
        
 
 var myCurrentDate=new Date();
 var myPastDate=new Date(myCurrentDate);
    var e = myPastDate.setDate(myPastDate.getDate() - 1);
-setId8(e);
+setId8(e/1000);
 console.log("date",e);
 
 
 
-const response = await fetch("https://api-testnet.bscscan.com/api?module=account&action=tokentx&contractaddress=0x85986F018314E42A2a0881f54868AB00f7b6f386&address="+account[0]+"&page=1&offset=100&sort=asc&apikey=YourApiKeyToken");
-const data = await response.json();
-setId7(data.result);
-//console.log("data",data);
-
-//console.log("req2",req2);
 
 
-}
-useEffect(()=>{bal()},[locktime])
-var countDownDate = new Date(tid1).getTime();
-// Update the count down every 1 second
+
+
+var countDownDate = new Date().getTime() + b * 1000; ;
+
 var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+   var now = new Date().getTime();
+  var distance = countDownDate - now ;
     
   // Time calculations for days, hours, minutes and seconds
  // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -83,19 +79,76 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML =hours + "h "
-  + minutes + "m " + seconds + "s ";
+ // document.getElementById("demo").innerHTML = hours + "h "
+ // + minutes + "m " + seconds + "s ";
+setTim1(hours);
+setTim2(minutes);
+setTim3(seconds);
     
   // If the count down is over, write some text 
-  
+  if (distance < 0) {
+        clearInterval(x);
+        console.log('CountDown Finished');
+    }
 
   
 }, 1000);
 
 
-//setTimeout(bal, 600);
-//setInterval(bal, 600)
-console.log("datas",datas);
+
+
+
+
+const response = await fetch("https://api-testnet.bscscan.com/api?module=account&action=tokentx&contractaddress=0x85986F018314E42A2a0881f54868AB00f7b6f386&address="+account[0]+"&page=1&offset=100&sort=asc&apikey=YourApiKeyToken");
+const data = await response.json();
+setId7(data.result);
+
+var coun  = 0;
+
+
+
+var myName = account[0];
+const myadd = '"' + myName + '"';
+
+
+var myna = parseInt(account[0]);
+
+
+for(var i = 0;i < datas.length;i++){ 
+
+let ad = parseInt(datas[i].from);
+
+const ad1 = '"' +  datas[i].from + '"';
+const myadd = '"' + myName + '"';
+
+var compareNum =0;
+if(datas[i].timeStamp >= dates){
+       if( myna == ad){
+           coun = coun + 1 ;
+           console.log("equal",coun);
+         }
+
+}}
+if(coun < 0){
+setId5("Nil");
+}
+else{
+setId5(coun);
+}
+
+
+
+
+}
+useEffect(()=>{bal()},[con])
+
+
+
+// usage
+
+
+
+
 
   return (
     
@@ -113,13 +166,20 @@ console.log("datas",datas);
    <br/><br/><br/><br/>
           {lock === true ? (
 			 <div>
-			 <text><i>Time Left to Unlock my account : <b id = "demo"></b></i></text>
+			 <text><i>Time Left to Unlock my account : <b id = "demo">{t1}h:{t2}m:{t3}s </b></i></text>
 			 </div>
-			 ):null
+			 ):(
+			 <div>
+			 <text>No Lock</text>
+			 </div>
+			 )
 			 }
  
+
    <br/><br/><br/><br/>
 
+             <text>Number of Transaction in last 24 hours ===> {con}</text>
+  <br/><br/><br/><br/>
    {datas.length === 0 ? null : (
        <div>
            <div>
@@ -163,11 +223,11 @@ console.log("datas",datas);
 {datas.map((a)=>{
      
 	   //console.log(`a`, a)
-console.log(a.timeStamp);
+
 
         return (
           <div>
-{ a.timeStamp <= setId8 ? (
+{ a.timeStamp >= dates ? (
 <div>
               <table >
       <tbody>
@@ -175,7 +235,7 @@ console.log(a.timeStamp);
         <tr>
             
           <td>
-            <h6>{a.from}</h6>
+            <h6>{a.from }</h6>
             
           </td>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
