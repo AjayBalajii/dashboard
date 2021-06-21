@@ -1,4 +1,4 @@
-.App {
+.App{
   text-align: center;
   background-color: black;
   color: white;
@@ -79,11 +79,13 @@ body {
 }
 
 .bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 36px;
+ 
+  position: absolute;
+  width: 25px;
+  
+  height: 20px;
+  left: 30px;
+  top: 30px;
 }
 
 .bm-burger-bars {
@@ -94,10 +96,18 @@ body {
 
 }
 .bm-menu {
+  
   background: #000000;
   padding: 1em 0.5em 0;
   font-size: 1.15em;
 
+}
+.head{
+  font-size: 72px;
+  background: -webkit-linear-gradient(rgb(75, 75, 75), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
 }
 
 .bm-morph-shape {

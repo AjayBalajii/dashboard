@@ -15,6 +15,19 @@ import sidebar from './sidebar';
 import { slide as Menu } from 'react-burger-menu';
 
 function App() {
+   useEffect(()=>{bal()});
+   const bal = async() => {
+
+   let account = await web3.eth.getAccounts();
+   if(account!=0){
+      document.getElementById("cc").style.visibility="hidden";
+       document.getElementById("cc1").innerHTML=account;
+      }
+      else{
+         document.getElementById("cc").style.visibility="true";
+   
+      }
+   }
    const connect = async() => {
       window.ethereum.enable();
       let account = await web3.eth.getAccounts();
@@ -33,6 +46,7 @@ function App() {
 integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"/>
 
    <div>
+      
    <button id="cc" class="btn btn-info btn-bloc" style={{marginLeft:"800px"}} onClick={connect}>connect wallet</button>
         <button id="cc1" class="btn btn-info btn-bloc" style={{marginLeft:"800px"}} ></button>
 

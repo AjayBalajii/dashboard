@@ -142,7 +142,8 @@ alert("The amount you entered must be less than the Maximum Transcation amount")
 
   return (
    
-    
+  
+
      <body class="App">
         
 
@@ -151,9 +152,8 @@ alert("The amount you entered must be less than the Maximum Transcation amount")
 <br></br>
 
       <center>
-        <br />
-        <br />
-       <h1>BURN VAULT</h1>
+       
+       <h1 class="head">BURN VAULT</h1>
        <br /><br />
         <div >
 <br />
@@ -232,7 +232,6 @@ alert("The amount you entered must be less than the Maximum Transcation amount")
 
             
       </body>
-     
   );
 }
 
