@@ -138,22 +138,13 @@ alert("The amount you entered must be less than the Maximum Transcation amount")
     await token.methods.approve("0x4783aD97Df0C00C2ef8305F94885bA0Ff7c20547",1000000000000000).send({from:account[0]});
   }
 
-  const connect = async() => {
-   window.ethereum.enable();
-   let account = await web3.eth.getAccounts();
-  
-//document.getElementById("cc").style.visibility="hidden";
-document.getElementById("cc").style.visibility="hidden";
-}
+ 
 
   return (
    
     
-     <body >
-        <button id="cc" class="btn btn-info btn-bloc" style={{marginLeft:"800px"}} onClick={connect}>connect wallet</button>
-        <button id="cc1" class="btn btn-info btn-bloc" style={{marginLeft:"800px"}} ></button>
-
-
+     <body class="App">
+        
 
 
               <br></br>
