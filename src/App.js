@@ -25,7 +25,8 @@ function App() {
       }
       else{
          document.getElementById("cc").style.visibility="true";
-   
+         document.getElementById("cc1").style.visibility="hidden";
+
       }
    }
    const connect = async() => {
@@ -34,6 +35,7 @@ function App() {
      
    //document.getElementById("cc").style.visibility="hidden";
    document.getElementById("cc").style.visibility="hidden";
+   //window.location.reload();
    }
       
 
@@ -47,19 +49,27 @@ integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJ
 
    <div>
       
-   <button id="cc" class="btn btn-info btn-bloc" style={{marginLeft:"800px"}} onClick={connect}>connect wallet</button>
-        <button id="cc1" class="btn btn-info btn-bloc" style={{marginLeft:"800px"}} ></button>
-
+  
 
    <Router>
+   <Navbar className="bg">
+          <Navbar.Brand>
+             <img src={logo} height="70px" style={{marginLeft:"60px"}}></img>
+      </Navbar.Brand>
+      <Navbar.Collapse className="justify-content-end">
+      <button id="cc" class="btn btn-info btn-bloc cc"  onClick={connect}>connect wallet</button>
+        <button id="cc1" class="btn btn-info btn-bloc cc1"  ></button>
+
+</Navbar.Collapse>
+</Navbar>
    <Menu>
-   <Link class="navlink"  exact to="/black">
+   <Link class="navlink11"  exact to="/black">
 
 Blackcollateral Page
 
 </Link>
  
- <Link class="navlink"  exact to="/vault">
+ <Link class="navlink11"  exact to="/vault">
 Burn Vault{' '}
        </Link>
     </Menu>
