@@ -13,7 +13,7 @@ import { Navbar } from 'react-bootstrap';
 import { Button,ButtonGroup } from 'react-bootstrap';
 import sidebar from './sidebar';
 import { slide as Menu } from 'react-burger-menu';
-
+import stake from './stake.js';
 function App() {
    useEffect(()=>{bal()});
    const bal = async() => {
@@ -72,6 +72,9 @@ Blackcollateral Page
  <Link class="navlink11"  exact to="/vault">
 Burn Vault{' '}
        </Link>
+       <Link class="navlink11"  exact to="/stake">
+Stake{' '}
+       </Link>
     </Menu>
 
 
@@ -79,7 +82,8 @@ Burn Vault{' '}
      <Switch>
 <Route exact path='/black' component={Black}/>
 <Route exact path='/vault' component={Vault}/>
- 
+<Route exact path='/stake' component={stake}/>
+
 </Switch>
 
 </Router>

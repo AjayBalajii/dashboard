@@ -33,7 +33,7 @@ var [count1,setcount]=useState("");
 var [ti,setti]=useState("");
   const bal = async() => {
     let account = await web3.eth.getAccounts();
-
+if(account!=0){
 //Returns the Balance of account
  const a = await token.methods.balanceOf(account[0]).call();
    setId(a/1000000000);
@@ -151,6 +151,7 @@ setcount(count1);
 
 
 }
+}
 useEffect(()=>{bal()},[con])
 
 t5=((t1*60)+(t2)+(t3/60));
@@ -186,7 +187,7 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
  
 <div class="row">
   <div class="col">
-  <h1 class="head">BlackCollateral</h1>
+  <h1 class="head">BLACK COLLATERAL</h1>
 
   </div>
   <div class="col">
