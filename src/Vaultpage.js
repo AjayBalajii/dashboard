@@ -52,7 +52,7 @@ var myfunct=async()=>{
    // setId(a);
    
    var b =   (a * 1000000000) / tid4;
- document.getElementById("tid11").innerHTML = b ;
+ document.getElementById("tid11").innerHTML = b.toFixed(15) ;
    
 }
 
@@ -97,14 +97,14 @@ console.log(bb);
      
      <Modal
        {...props}
-       style={{width:"500px" , marginLeft:"400px"}}
+       style={{width:"500px" , marginLeft:"400px",}}
  
        size="lg"
        aria-labelledby="contained-modal-title-vcenter"
        id="mymodal"
        centered
      >
-       <Modal.Header className="myModal" closeButton>
+       <Modal.Header className="myModal" style={{backgroundColor:"#191919",color:"white"}} closeButton>
           
          <Modal.Title id="contained-modal-title-vcenter" >
            Amount to Swap
@@ -112,11 +112,11 @@ console.log(bb);
         
        </Modal.Header>
        
-       <Modal.Body className="myModal">
+       <Modal.Body style={{backgroundColor:"#191919", color:"white"}}  className="myModal">
          <h4 style={{textAlign: "center"}}></h4>
          <InputGroup>
    <InputGroup.Prepend>
-    <h5>Black : </h5>
+    <h5>Black : </h5>&nbsp;
    </InputGroup.Prepend>
    <FormControl className="myInput" onChange={myfunct} id="tid" aria-label="Amount (to the nearest dollar)" /><br/>
    <InputGroup.Append>
@@ -131,7 +131,7 @@ console.log(bb);
 <h5 id ="tid11" style={{marginLeft:"20px"}}></h5>
  </InputGroup>
        </Modal.Body>
-       <Modal.Footer className="myModal">
+       <Modal.Footer style={{backgroundColor:"#191919"}}  className="myModal">
          <Button variant="primary" onClick={swap}>Swap</Button>
        </Modal.Footer>
      </Modal>
