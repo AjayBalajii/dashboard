@@ -1,14 +1,14 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 //import vabi from "./vault.js";
-import { CountdownCircleTimer } from "react-countdown-circle-timer";
+//import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 import React, { useState,useEffect } from "react";
 import web3 from './web3';
 import token from './token.js';
 import {
   CircularProgressbar,
-  CircularProgressbarWithChildren,
+ 
   buildStyles
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -28,12 +28,11 @@ function NewfileMar() {
  const[t2,setTim2] = useState("");
  const[t3,setTim3 ] = useState("");
  var[t5,settime5]=useState("");
-let account =  web3.eth.getAccounts();
 var [count1,setcount]=useState("");
 var [ti,setti]=useState("");
   const bal = async() => {
     let account = await web3.eth.getAccounts();
-if(account!=0){
+if(account!==0){
 //Returns the Balance of account
  const a = await token.methods.balanceOf(account[0]).call();
    setId(a/1000000000);
@@ -131,7 +130,7 @@ const myadd = '"' + myName + '"';
 
 var compareNum =0;
 if(datas[i].timeStamp >= dates){
-       if( myna == ad){
+       if( myna === ad){
            coun = coun + 1 ;
            console.log("equal",coun);
          }

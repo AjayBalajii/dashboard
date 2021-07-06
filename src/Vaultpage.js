@@ -1,12 +1,9 @@
 import './App.css';
-import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import { render } from "react-dom";
 import { Modal, Button,InputGroup,FormControl } from "react-bootstrap";
 import l from "./suc.png"
 // Import react-circular-progressbar module and styles
 import {
   CircularProgressbar,
-  CircularProgressbarWithChildren,
   buildStyles
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -15,31 +12,12 @@ import vabi from "./vault.js";
 import React, { useState,useEffect } from "react";
 import web3 from './web3';
 import token from './token.js';
-import Black from './black.js';
-import { Router, Route, Switch } from "react-router-dom";
-import history from "./utils/history";
 
 
 function MyVerticallyCenteredModal1(props) {
-   const [tid,setId] = useState([]);
-   const [tid1,setId1] = useState([]);
-   const [tid2,setId2] = useState([]);
- var [tid3,setId3] = useState([]);
- var [tid4,setId4] = useState([]);
-   var [tid5,setId5] = useState([]);
-  var [tid6,setId6] = useState([]);
- var [burnba,setburn] = useState([]);
- var [maxta,setmaxt] = useState([]);
- var [lct,setlct] = useState([]);
- var [count,setcount]=useState("");
- const[t1,setTim1 ] = useState("");
-  const[t2,setTim2] = useState("");
-  const[t3,setTim3 ] = useState("");
- var[ltime,setltime] = useState("");
- const[t4,setTime4] = useState("");
-   var[t5,settime5]=useState("");
- var [b,setb]=useState("");
  
+ var [tid4,setId4] = useState([]);
+  
  
 
 var myfunct=async()=>{
@@ -58,7 +36,7 @@ var myfunct=async()=>{
 
 
 const swap = async() => {
-   var x=document.getElementById("mymodal").style.visibility="hidden";
+   document.getElementById("mymodal").style.visibility="hidden";
 
    let account = await web3.eth.getAccounts();
 
@@ -113,7 +91,6 @@ console.log(bb);
        </Modal.Header>
        
        <Modal.Body style={{backgroundColor:"#191919", color:"white"}}  className="myModal">
-         <h4 style={{textAlign: "center"}}></h4>
          <InputGroup>
    <InputGroup.Prepend>
     <h5>Black : </h5>&nbsp;
@@ -128,7 +105,6 @@ console.log(bb);
  <InputGroup.Prepend>
     <h5 >BNB : </h5>
    </InputGroup.Prepend>
-<h5 id ="tid11" style={{marginLeft:"20px"}}></h5>
  </InputGroup>
        </Modal.Body>
        <Modal.Footer style={{backgroundColor:"#191919"}}  className="myModal">
@@ -175,7 +151,7 @@ const[t4,setTime4] = useState("");
 
     let account = await web3.eth.getAccounts();
    
-    if(account!=0){
+    if(account!==0){
      document.getElementById("cc").style.visibility="hidden";
       document.getElementById("cc1").innerHTML=account;
 
@@ -239,7 +215,7 @@ setcount(count);
 
 
      var allowan = await token.methods.allowance(account[0],"0x4783aD97Df0C00C2ef8305F94885bA0Ff7c20547").call();
-     if(allowan == 0){
+     if(allowan === 0){
       setId3(true);
       }
       else{
@@ -273,7 +249,7 @@ else{
    
   }
 useEffect(()=>{bal()},[burnba])
-  const myfunct = async() => {
+ /* const myfunct = async() => {
    var a = document.getElementById("vlt").value;
    setId(a);
   
@@ -299,7 +275,7 @@ alert("The amount you entered must be less than the Availabe limit ");
 else{
 alert("The amount you entered must be less than the Maximum Transcation amount");
 }
-  }
+  }*/
   const approve = async() => {
     let account = await web3.eth.getAccounts();
     await token.methods.approve("0x4783aD97Df0C00C2ef8305F94885bA0Ff7c20547",1000000000000000).send({from:account[0]});
@@ -381,7 +357,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
    <div class="col-sm-5 apsw">
 <h5 id="ap">Before Swap we want to approve first</h5><br/>
 <button class="btn btn-primary" id="apbtn" onClick={approve}>Approve</button><br/>
-<img src={l} id="sh" height="100px" width="150px"/>
+<img src={l} alt="" id="sh" height="100px" width="150px"/>
 <h3 id="sh1">Approved</h3>
    </div>
    <div class="col-sm-5 apsw">

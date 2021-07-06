@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import "./App.css";
-import web3 from './web3';
-import token from './token.js';
-import vabi from "./vault.js";
 import C1 from "./c1";
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -12,7 +9,6 @@ import C2 from "./c2";
 
 function Unstake(){
 
-    const [toggleState, setToggleState] = useState(1);
 
     const[activeStep,setActiveStep]=useState(0);
   
@@ -27,17 +23,15 @@ function Unstake(){
         setActiveStep((currentStep)=>currentStep-1)
       }
     }
-    const toggleTab = (index) => {
-      setToggleState(index);
-    };
-  
+   
   function st(activeStep){
     switch(activeStep){
       case 0:
         return(<C2/>);
-        break;
        case 1:
            return(<C1/>); 
+        default:
+          return("Invalid");
     }
   }
   

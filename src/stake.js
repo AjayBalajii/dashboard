@@ -1,14 +1,11 @@
 import './App.css';
-import { Modal, Button,InputGroup,FormControl,Nav,NavItem,NavLink,Sonnet,Tab } from "react-bootstrap";
-import React, { useState,useEffect,useStyles } from "react";
+import {Modal,Button,InputGroup,FormControl,} from "react-bootstrap";
+import "react-responsive-modal/styles.css";
+//import { Modal } from "react-responsive-modal";
+
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Staking from './Staking (1)';
-import Stepper1 from './stepper';
-
 import web3 from './web3';
-
-//import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
-import { render } from '@testing-library/react';
 import Tabs from'./tab';
 import Staking1 from './Staking (1)';
         
@@ -16,13 +13,13 @@ import Staking1 from './Staking (1)';
 function MyVerticallyCenteredModal1(props) {
     
   var stake1=async()=>{
-    var x=document.getElementById("mymodal").style.visibility="hidden";
+  document.getElementById("mymodal").style.visibility="hidden";
 
     let account = await web3.eth.getAccounts();
 
 var am =document.getElementById("tid").value;
 alert(am);
-if(am!=0){
+if(am!==0){
     await Staking1.methods.deposit(am).send({from:account[0]});
 
 }
@@ -33,9 +30,8 @@ if(am!=0){
    
       <Modal
         {...props}
-        className="modal"
-  
-        size="auto"
+        dialogClassName="custom-modal"
+      bsClass="my-modal"
         aria-labelledby="contained-modal-title-vcenter"
         id="mymodal"
         centered
@@ -49,7 +45,6 @@ if(am!=0){
         </Modal.Header>
         
         <Modal.Body style={{backgroundColor:"#191919", color:"white"}}  className="myModal">
-          <h4 style={{textAlign: "center"}}></h4>
           <InputGroup>
     <InputGroup.Prepend>
     
@@ -72,13 +67,13 @@ if(am!=0){
   function MyVerticallyCenteredModal2(props) {
     
     var wid1=async()=>{
-        var x=document.getElementById("mymodal").style.visibility="hidden";
+        document.getElementById("mymodal").style.visibility="hidden";
 
       let account = await web3.eth.getAccounts();
   
   var wi =document.getElementById("tid1").value;
   alert(wi);
-  if(wi!=0){
+  if(wi!==0){
       await Staking1.methods.withdraw(wi).send({from:account[0]});
   
   }
@@ -104,7 +99,6 @@ if(am!=0){
           </Modal.Header>
           
           <Modal.Body style={{backgroundColor:"#191919", color:"white"}}  className="myModal">
-            <h4 style={{textAlign: "center"}}></h4>
             <InputGroup>
       <InputGroup.Prepend>
       
@@ -144,9 +138,10 @@ function Stake(){
 } 
     return(
 
-        
         <div className="App">
 <div class="container-fluid">
+
+
 <div class="row">
     <div class="col-sm-9">
     <Tabs/>

@@ -8,7 +8,7 @@ return(<div>
 
 <div class="row">
     <div class="col-sm-4">
-        <img src={n} height="80px" width="80px"/>
+        <img src={n} alt="" height="80px" width="80px"/>
     </div>
     <div class="col-sm-8">
     After Unstaking, you must wait 7 days before you can withdraw your BLACK and rewards.
