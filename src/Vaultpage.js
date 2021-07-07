@@ -151,7 +151,7 @@ const[t4,setTime4] = useState("");
 
     let account = await web3.eth.getAccounts();
    
-    if(account!==0){
+    if(account!=0){
      document.getElementById("cc").style.visibility="hidden";
       document.getElementById("cc1").innerHTML=account;
 
@@ -215,7 +215,7 @@ setcount(count);
 
 
      var allowan = await token.methods.allowance(account[0],"0x4783aD97Df0C00C2ef8305F94885bA0Ff7c20547").call();
-     if(allowan === 0){
+     if(allowan == 0){
       setId3(true);
       }
       else{

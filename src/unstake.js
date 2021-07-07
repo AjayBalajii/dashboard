@@ -19,7 +19,7 @@ function Unstake(){
       }
     }
     const previousStep =()=>{
-      if(activeStep!==0){
+      if(activeStep!=0){
         setActiveStep((currentStep)=>currentStep-1)
       }
     }

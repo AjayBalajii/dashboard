@@ -2,7 +2,7 @@ import './App.css';
 import {Modal,Button,InputGroup,FormControl,} from "react-bootstrap";
 import "react-responsive-modal/styles.css";
 //import { Modal } from "react-responsive-modal";
-
+import HorizontalLinearStepper from "./stepper"
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import web3 from './web3';
@@ -19,7 +19,7 @@ function MyVerticallyCenteredModal1(props) {
 
 var am =document.getElementById("tid").value;
 alert(am);
-if(am!==0){
+if(am!=0){
     await Staking1.methods.deposit(am).send({from:account[0]});
 
 }
@@ -73,7 +73,7 @@ if(am!==0){
   
   var wi =document.getElementById("tid1").value;
   alert(wi);
-  if(wi!==0){
+  if(wi!=0){
       await Staking1.methods.withdraw(wi).send({from:account[0]});
   
   }

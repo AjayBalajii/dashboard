@@ -18,7 +18,7 @@ function App() {
    const bal = async() => {
 
    let account = await web3.eth.getAccounts();
-   if(account!==0){
+   if(account!=0){
       document.getElementById("cc").style.visibility="hidden";
        document.getElementById("cc1").innerHTML=account;
       }

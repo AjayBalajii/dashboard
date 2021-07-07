@@ -7,6 +7,7 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import StepIcon from '@material-ui/core/StepIcon';
+import { green } from '@material-ui/core/colors';
 
 function Tabs() {
   
@@ -21,7 +22,7 @@ function Tabs() {
     }
   }
   const previousStep =()=>{
-    if(activeStep!==0){
+    if(activeStep!=0){
       setActiveStep((currentStep)=>currentStep-1)
     }
   }
@@ -78,7 +79,7 @@ function st(activeStep){
           <h2>Stake your BLACK</h2><br/>
 
 <Stepper orientation="horizontal" activeStep={activeStep} style={{backgroundColor:"black",color:"white"}}>
-<Step >
+<Step>
 <StepIcon>{n}</StepIcon>
 </Step>
 <Step >

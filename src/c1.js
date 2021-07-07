@@ -15,16 +15,16 @@ const bal=async()=>{
 
   let account =  web3.eth.getAccounts();
   
-if(account!==0){
+if(account!=0){
  
     var a=await vabi.methods.getBurnVaultBLACKBalance().call();
 
   
-if (account!==0){
+if (account!=0){
   document.getElementById("checklist1").checked=true;
 
 
-  if(a!==0){
+  if(a!=0){
   setc1(document.getElementById("checklist2").checked=true);
     setc2(document.getElementById("checklist4").checked=true);
    setc3(document.getElementById("checklist3").checked=true);

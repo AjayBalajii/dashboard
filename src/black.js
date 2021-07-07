@@ -32,7 +32,7 @@ var [count1,setcount]=useState("");
 var [ti,setti]=useState("");
   const bal = async() => {
     let account = await web3.eth.getAccounts();
-if(account!==0){
+if(account!=0){
 //Returns the Balance of account
  const a = await token.methods.balanceOf(account[0]).call();
    setId(a/1000000000);
@@ -130,7 +130,7 @@ const myadd = '"' + myName + '"';
 
 var compareNum =0;
 if(datas[i].timeStamp >= dates){
-       if( myna === ad){
+       if( myna == ad){
            coun = coun + 1 ;
            console.log("equal",coun);
          }
