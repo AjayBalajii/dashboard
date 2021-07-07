@@ -246,9 +246,9 @@ body {
 .bm-menu {
   
   background: #000000;
-  padding: 1em 0.5em 0;
-  font-size: 1.15em;
-
+  padding: 0.5em 0.5em 0;
+  font-size: 1em;
+width: 65%;
 }
 
 .tab {

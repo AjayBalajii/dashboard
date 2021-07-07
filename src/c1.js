@@ -13,7 +13,7 @@ const[c3,setc3 ] = useState("");
   useEffect(()=>{bal()});
 const bal=async()=>{
 
-  let account =  web3.eth.getAccounts();
+  const account = await web3.eth.getAccounts();
   
 if(account!=0){
  
@@ -38,8 +38,16 @@ if (account!=0){
 
 
 }
-}
 
+
+}
+else{
+  document.getElementById("checklist1").disabled=true;
+  setc1(document.getElementById("checklist2").disabled=true);
+    setc2(document.getElementById("checklist4").disabled=true);
+   setc3(document.getElementById("checklist3").disabled=true);
+   
+}
 }
 /*function click(){
   if(c1&c2&c3==true){
@@ -66,7 +74,7 @@ if (account!=0){
              
                 </div>
             <div class="col">
-        <input  class="form-check-input" type="checkbox" value="" id="checklist1" disabled  / >
+        <input  class="form-check-input" type="radio" value="" id="checklist1"   / >
         
         </div>
               </div>
@@ -81,7 +89,7 @@ if (account!=0){
         
                 </div>
             <div class="col">
-        <input  class="form-check-input" type="checkbox" value="" id="checklist2" disabled />
+        <input  class="form-check-input" type="radio" value="" id="checklist2"  />
         
         </div>
               </div>
@@ -96,7 +104,7 @@ if (account!=0){
         BNB Balance: 0.0000  
           </div>
             <div class="col">
-        <input  class="form-check-input" type="checkbox" id="checklist3" disabled />
+        <input  class="form-check-input" type="radio" id="checklist3"  />
         
         </div>
               </div>
@@ -108,7 +116,7 @@ if (account!=0){
              You cannot stake if you have an active BLACK unstake/withdrawal request    </div>
           
              <div class="col">
-        <input  class="form-check-input" type="checkbox"  id="checklist4" disabled />
+        <input  class="form-check-input "  type="radio"  id="checklist4"  />
         
         </div>
                 </div>

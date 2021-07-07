@@ -173,11 +173,11 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
     
     <div  > 
 
-     <body  class="App" >
+     <body  class="App container pl-5" >
         
 <center>
   <div>
-      <div class="container">
+      <div class="container p-5">
         <br />
         <br />
         <br/>

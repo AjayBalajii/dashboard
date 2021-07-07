@@ -228,6 +228,8 @@ setcount(count);
       document.getElementById("cc").style.visibility="true";
 
    }
+if(account!=0){
+  document.getElementById("mm").style.visibility="hidden"
 
 if(tid3=true){
    document.getElementById("sh").style.visibility="visible";
@@ -242,6 +244,16 @@ else{
    document.getElementById("sh").style.visibility="hidden";
    document.getElementById("sh1").style.visibility="hidden";
    document.getElementById("swap").style.visibility="hidden";
+
+}
+}
+else{
+  document.getElementById("mm").style.visibility="visible";
+  document.getElementById("sh1").style.visibility="hidden";
+  document.getElementById("ap").style.visibility="hidden";
+  document.getElementById("apbtn").style.visibility="hidden";
+  document.getElementById("sh").style.visibility="hidden";
+  document.getElementById("swap").style.visibility="hidden";
 
 }
 
@@ -294,7 +306,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
    
   
 
-     <body class="App">
+     <body class="App container pl-5">
      <link href="css-circular-prog-bar.css" rel="stylesheet"/>
 
  <br></br>
@@ -306,7 +318,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 
        
      <br/>
-        <div class="container">
+        <div class="container p-5">
         
 <div class="row justify-content-end">
    <div class="col tiny">
@@ -352,7 +364,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
    <br/><br/><br/><br/>
 
 <div class="container">
- 
+ <h3 id="mm">Please connect metamask .....</h3><br/>
 <div class="row justify-content-around">
    <div class="col-sm-5 apsw">
 <h5 id="ap">Before Swap we want to approve first</h5><br/>
@@ -362,7 +374,8 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
    </div>
    <div class="col-sm-5 apsw">
 
-<br/><br/>
+<br/>
+
 
 
    <text>Available limit for User to Swap :<b>  {burnba}</b></text><br /><br />
