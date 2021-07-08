@@ -5,7 +5,9 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import C2 from "./c2";
-
+import Usc3 from "./usc3";
+import Usc4 from "./usc4";
+import Usc5 from "./Usc5";
 
 function Unstake(){
 
@@ -30,7 +32,13 @@ function Unstake(){
         return(<C2/>);
        case 1:
            return(<C1/>); 
-        default:
+        case 2:
+          return(<Usc3/>);
+        case 3:
+          return(<Usc4/>);
+        case 4:
+          return(<Usc5/>);  
+          default:
           return("Invalid");
     }
   }

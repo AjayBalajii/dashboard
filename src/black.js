@@ -236,10 +236,10 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
 <table className="table  table-bordered">
           <thead>
           <tr>
-      <th scope="col">From</th>
-      <th scope="col">To</th>
-      <th scope="col">Value</th>
-      <th scope="col">TxHash</th>
+      <th class="cell" scope="col">From</th>
+      <th class="cell" scope="col">To</th>
+      <th class="cell" scope="col">Value</th>
+      <th class="cell" scope="col">TxHash</th>
 
     </tr>
   </thead>

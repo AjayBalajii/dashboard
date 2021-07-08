@@ -2,7 +2,7 @@ import n from './n.png'
 
 function C2(){
 return(<div>
-        <div class="container" style={{backgroundColor:"#060606"}}>
+        <div class="container" style={{backgroundColor:"#0000"}}>
         <br/><br/>
         <br/><br/>
 

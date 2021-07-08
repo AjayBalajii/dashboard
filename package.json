@@ -12,6 +12,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "bs-stepper": "^1.7.0",
+    "jquery": "^3.6.0",
     "link": "^0.1.5",
     "material-ui": "^1.0.0-beta.47",
     "mdbreact": "^5.0.2",

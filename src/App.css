@@ -125,12 +125,14 @@
 }
 .table{
   background-color: #191919;
+  color:white;
   
 }
 
 .cell{
   font-size: 12px;
   padding: 10px;
+  color: white;
   
 }
 
@@ -242,6 +244,23 @@ body {
   width: 25px;
   
 
+}
+.sc2{
+  background-color: #191919;
+  color: white;
+  
+  text-align: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+.txtf{
+  background-color: #191919;
+  border-style: none;
+  color: white;
+}
+.txt:active{
+  border-color: #31d2f2;
 }
 .bm-menu {
   

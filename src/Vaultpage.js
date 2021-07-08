@@ -12,11 +12,20 @@ import vabi from "./vault.js";
 import React, { useState,useEffect } from "react";
 import web3 from './web3';
 import token from './token.js';
+import Sc2 from './sc2';
+import {fs,v1} from './sc2';
+
+
+const ss=async (props)=>{
+  alert(v1)
+  
+  
+}
 
 
 function MyVerticallyCenteredModal1(props) {
  
- var [tid4,setId4] = useState([]);
+ var [tid4,setId4] = useState();
   
  
 
@@ -105,6 +114,7 @@ console.log(bb);
  <InputGroup.Prepend>
     <h5 >BNB : </h5>
    </InputGroup.Prepend>
+   &nbsp; &nbsp;<h4 id="tid11"></h4>
  </InputGroup>
        </Modal.Body>
        <Modal.Footer style={{backgroundColor:"#191919"}}  className="myModal">
@@ -146,10 +156,26 @@ var[ltime,setltime] = useState("");
 const[t4,setTime4] = useState("");
   var[t5,settime5]=useState("");
 
+
+  const connect = async() => {
+    window.ethereum.enable();
+   // let account = await web3.eth.getAccounts();
+   
+ //document.getElementById("cc").style.visibility="hidden";
+ document.getElementById("cc").style.visibility="hidden";
+ //window.location.reload();
+ }
+
+
+
   const bal = async() => {
 //timer
 
     let account = await web3.eth.getAccounts();
+
+
+
+    
    
     if(account!=0){
      document.getElementById("cc").style.visibility="hidden";
@@ -229,7 +255,8 @@ setcount(count);
 
    }
 if(account!=0){
-  document.getElementById("mm").style.visibility="hidden"
+  document.getElementById("mm").style.visibility="hidden";
+  document.getElementById("cc5").style.visibility="hidden";
 
 if(tid3=true){
    document.getElementById("sh").style.visibility="visible";
@@ -313,7 +340,6 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 <br></br>
      <center>
 
-
    
 
        
@@ -361,10 +387,13 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 
 
 
-   <br/><br/><br/><br/>
+   <br/><br/>
 
 <div class="container">
  <h3 id="mm">Please connect metamask .....</h3><br/>
+ <button id="cc5" class="btn btn-info btn-bloc cc"  onClick={connect}>connect wallet</button>
+<br/><br/>
+
 <div class="row justify-content-around">
    <div class="col-sm-5 apsw">
 <h5 id="ap">Before Swap we want to approve first</h5><br/>

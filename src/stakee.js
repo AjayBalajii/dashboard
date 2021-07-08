@@ -9,18 +9,23 @@ import {useState,useEffect } from "react";
 import n from "./n.png"
 import web3 from './web3';
 import vabi from "./vault.js";
+import { Confirm } from './c1';
+import Sc2 from "./sc2";
+import Sc3 from "./sc3";
+import Sc4 from "./sc4";
 
 
 
 
 function Stakee(){
 
+
     const [toggleState, setToggleState] = useState(1);
 
     const[activeStep,setActiveStep]=useState(0);
   
     const nextStep =()=>{
-      if(activeStep<4){
+      if(activeStep<3){
         setActiveStep((currentStep)=>currentStep+1)
         st();
       }
@@ -40,12 +45,26 @@ function Stakee(){
     switch(activeStep){
       case 0:
         return(<C1/>);
+      case 1:
+        return(<Sc2/>);
+      case 2:
+      return(<Sc3/>);
+      case 3:
+        return(<Sc4/>); 
        default:
          return("");
     }
   }
   
-  
+  function bal(){
+    if (Confirm==0){
+      //document.getElementById("next").disabled=true;
+    }
+  }
+
+
+  useEffect(()=>{bal()});
+
   
   
   
@@ -67,10 +86,6 @@ function Stakee(){
 <Step>
 <StepLabel></StepLabel>
 
-</Step>
-<Step>
-  <StepLabel></StepLabel>
-  
 </Step>
 <Step>
   <StepLabel></StepLabel>

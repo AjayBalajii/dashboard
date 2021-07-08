@@ -3,6 +3,15 @@ import './App.css';
 import web3 from './web3';
 import vabi from "./vault.js";
 
+import $ from 'jquery';
+window.count=0;
+
+function conform(){
+  window.count=1
+}
+export var Confirm=window.count;
+
+
 
 function C1(){
  
@@ -58,7 +67,7 @@ else{
    }
 }*/
     return(
-        <div class="container" style={{backgroundColor:"#060606 " ,padding:"20px", borderRadius:"20px"}}>
+        <div class="check" id="c1" class="container" style={{backgroundColor:"#0000 " ,padding:"20px", borderRadius:"20px"}}>
         <h5>Checkpoints</h5>
         
                   <p>
@@ -124,7 +133,7 @@ else{
               </div>
             </div>
         </div><br/>
-        <input  class="form-check-input" type="checkbox"   id="c4"/>&nbsp;
+        <input  class="form-check-input" onClick={conform} type="radio"   id="c4"/>&nbsp;
         
         I have read the <a href="#">Terms and Conditions</a>
         
