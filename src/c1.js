@@ -4,6 +4,7 @@ import web3 from './web3';
 import vabi from "./vault.js";
 
 import $ from 'jquery';
+import token from "./token";
 window.count=0;
 
 function conform(){
@@ -18,6 +19,8 @@ function C1(){
 const[c1,setc1 ] = useState("");
 const[c2,setc2 ] = useState("");
 const[c3,setc3 ] = useState("");
+const[b1,setb1 ] = useState("");
+const[b2,setb2 ] = useState("");
 
   useEffect(()=>{bal()});
 const bal=async()=>{
@@ -25,23 +28,35 @@ const bal=async()=>{
   const account = await web3.eth.getAccounts();
   
 if(account!=0){
- 
-    var a=await vabi.methods.getBurnVaultBLACKBalance().call();
-
+  setb1( await vabi.methods.getBurnVaultBNBBalance().call());
+  setb2(await token.methods.balanceOf(account[0]).call());
+  
+    var a=await vabi.methods.getBurnVaultBNBBalance().call();
+  var b=await token.methods.balanceOf(account[0]).call()
   
 if (account!=0){
   document.getElementById("checklist1").checked=true;
 
 
   if(a!=0){
-  setc1(document.getElementById("checklist2").checked=true);
-    setc2(document.getElementById("checklist4").checked=true);
-   setc3(document.getElementById("checklist3").checked=true);
-   
-   
+  setc1(document.getElementById("checklist3").checked=true);
+   setc2(document.getElementById("checklist4").checked=true);
+  
+  }
+
+  else{
+    setc2(document.getElementById("checklist4").disabled=true);
+   setc3(document.getElementById("checklist3").disabled=true);
    
   }
+  if(b!=0){
+    setc3(document.getElementById("checklist2").checked=true);
+
+  }
+  
   else{
+    setc1(document.getElementById("checklist2").disabled=true);
+
    // document.getElementById("next").disabled=true;
   }
 
@@ -52,10 +67,7 @@ if (account!=0){
 }
 else{
   document.getElementById("checklist1").disabled=true;
-  setc1(document.getElementById("checklist2").disabled=true);
-    setc2(document.getElementById("checklist4").disabled=true);
-   setc3(document.getElementById("checklist3").disabled=true);
-   
+    
 }
 }
 /*function click(){
@@ -73,7 +85,7 @@ else{
                   <p>
                   The following conditions must be met to proceed:
         </p>
-        <div class="container" style={{backgroundColor:"#060606"}}>
+        <div class="container">
           <div class="row justify-content-center">
             <div class="col-sm col-ele1">
               <div class="row">
@@ -83,7 +95,7 @@ else{
              
                 </div>
             <div class="col">
-        <input  class="form-check-input" type="radio" value="" id="checklist1"   / >
+        <input  class="form-check-input" type="radio" value="" id="checklist1"  />
         
         </div>
               </div>
@@ -94,7 +106,7 @@ else{
             <div class="row">
                 <div class="col-9">
                 <b>BLACK available to deposit</b>  <br/><br/>
-             Current Balance: 0.0000
+            <b> Current Balance:{b2/1000000000}</b>
         
                 </div>
             <div class="col">
@@ -110,7 +122,7 @@ else{
         
             <b>BNB available in wallet</b>  <br/>
              BNB is required to pay transaction fees on the Binance Smart Chain network.<br/>
-        BNB Balance: 0.0000  
+       <b>BNB Balance: {b1/1000000000}  </b>
           </div>
             <div class="col">
         <input  class="form-check-input" type="radio" id="checklist3"  />
@@ -133,10 +145,7 @@ else{
               </div>
             </div>
         </div><br/>
-        <input  class="form-check-input" onClick={conform} type="radio"   id="c4"/>&nbsp;
-        
-        I have read the <a href="#">Terms and Conditions</a>
-        
+       
         
         </div>
     );

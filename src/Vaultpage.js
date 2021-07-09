@@ -336,14 +336,9 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
      <body class="App container pl-5">
      <link href="css-circular-prog-bar.css" rel="stylesheet"/>
 
- <br></br>
-<br></br>
+ 
+
      <center>
-
-   
-
-       
-     <br/>
         <div class="container p-5">
         
 <div class="row justify-content-end">
@@ -370,7 +365,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 
    </div>
    
-</div><br/><br/>
+</div><br/>
 <div class="row justify-content-around">
    <div class="col-sm-5 col-ele">
    <text>1 Black <br/><h4> { parseFloat(1000000000/tid4).toFixed(15)} BNB</h4></text>
@@ -381,21 +376,23 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 
    </div>
    
-</div><br/><br/>
-
-<br />
+</div>
 
 
 
-   <br/><br/>
 
 <div class="container">
- <h3 id="mm">Please connect metamask .....</h3><br/>
- <button id="cc5" class="btn btn-info btn-bloc cc"  onClick={connect}>connect wallet</button>
+
 <br/><br/>
 
 <div class="row justify-content-around">
    <div class="col-sm-5 apsw">
+
+
+   <h3 id="mm">Please connect metamask .....</h3><br/>
+ <button id="cc5" class="btn btn-info btn-bloc cc"  onClick={connect}>connect wallet</button>
+
+     
 <h5 id="ap">Before Swap we want to approve first</h5><br/>
 <button class="btn btn-primary" id="apbtn" onClick={approve}>Approve</button><br/>
 <img src={l} alt="" id="sh" height="100px" width="150px"/>
@@ -405,7 +402,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 
 <br/>
 
-
+<br/><br/>
 
    <text>Available limit for User to Swap :<b>  {burnba}</b></text><br /><br />
 

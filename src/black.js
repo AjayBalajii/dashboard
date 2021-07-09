@@ -178,10 +178,7 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
 <center>
   <div>
       <div class="container p-5">
-        <br />
-        <br />
-        <br/>
-       
+      
        
  
 <div class="row">
@@ -197,7 +194,7 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
 </div>
   </div>
 </div>
-<br/><br/><br/>
+<br/><br/>
 <div class="row justify-content-around">
    <div class="col-sm-5 col-ele">
    <text>
@@ -211,8 +208,8 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
    
 </div><br/><br/>
 
-<br/>
-<br/>
+
+
 </div>
    {datas.length === 0 ? null : (
        <div>

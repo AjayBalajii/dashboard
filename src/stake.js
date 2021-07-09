@@ -3,13 +3,18 @@ import {Modal,Button,InputGroup,FormControl,} from "react-bootstrap";
 import "react-responsive-modal/styles.css";
 //import { Modal } from "react-responsive-modal";
 import HorizontalLinearStepper from "./stepper"
-import React from "react";
+import React, { useState,useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import web3 from './web3';
 import Tabs from'./tab';
 import Staking1 from './Staking (1)';
-        
-   
+import "react-responsive-modal/styles.css";
+import token from './token';
+  
+
+
+
+
 function MyVerticallyCenteredModal1(props) {
     
   var stake1=async()=>{
@@ -131,11 +136,26 @@ function Stake(){
 
     const [modalShow1, setModalShow1] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
+    //const [modalShow3, setModalShow3] = React.useState(false);
+
+    const [reward,setReward]=useState("");
+  const [tbs,setTbs]=useState("");
+
+    
+
 
    const cr=async()=>{
-       alert("gi")
+       alert("claim reward")
     await Staking1.methods.claimReward().call();
 } 
+const bal= async()=>{
+  let account = await web3.eth.getAccounts();
+
+  setReward(await Staking1.methods.pendingBlack(account[0]).call());
+  setTbs(await token.methods.balanceOf("0xf1ff561190950Ed9020fe62DB83045dED760A606").call())
+}
+useEffect(()=>{bal()})
+
     return(
 
         <div className="App">
@@ -149,7 +169,11 @@ function Stake(){
     <div class="col-sm-3">
     <div class=" col-ele">Staked<br/><hr style={{height:"0px", width:"90%",margin: "auto"}}/>....</div><br/>
     <div class=" col-ele">Unstaked<br/><hr  style={{height:"0px",width:"90%",margin: "auto"}}/>....</div><br/>
-    <div class=" col-ele">Rewards<br/><hr  style={{width:"90%", height:"0px",margin: "auto"}}/>....
+ 
+    <div class=" col-ele">Total BLACK Staked<br/><hr style={{height:"0px", width:"90%",margin: "auto"}}/>{tbs/1000000000}</div><br/>
+    <div class=" col-ele">APY<br/><hr style={{height:"0px", width:"90%",margin: "auto"}}/>....</div><br/>
+    <div class=" col-ele">Rewards<br/><hr  style={{width:"90%", height:"0px",margin: "auto"}}/>{reward}
+    
     <br/><br/>
 
     <button class="btn btn-sm btn-info"  id="swap" onClick={() => setModalShow1(true)}>
@@ -163,23 +187,24 @@ function Stake(){
         
         
     <button class="btn btn-sm btn-info"  id="swap" onClick={() => setModalShow2(true)}>
-          Withdraw
+          Unstake
         </button>&nbsp;
   
         <MyVerticallyCenteredModal2
           show={modalShow2}
-          onHide={() => setModalShow1(false)}
+          onHide={() => setModalShow2(false)}
         />   
    <button class="btn btn-sm btn-info" onClick={cr}>Claim Rewards</button>
 
 
-    </div>
+    </div><br/>
 
     </div>
 </div>
 
 </div>
 <br/><br/><br/><br/>
+
     </div>
     
         

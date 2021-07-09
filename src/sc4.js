@@ -8,7 +8,7 @@ function Sc4(){
         <div class="check"  style={{backgroundColor:"#0000 " ,padding:"20px", borderRadius:"20px"}}>
 
 
-<h4>Under Construction</h4>
+<h4>Click next Button to continue your staking </h4>
 <br/><br/>
 </div>
 
