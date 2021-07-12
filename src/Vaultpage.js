@@ -345,38 +345,31 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 </div>
 <br /><br/><br/>
 <div class="row justify-content-around">
-   <div class="col-sm-5 col-ele">
-   <text>Balance of my Black Token<br/> <h4> {tid2/1000000000}</h4></text>
+   <div class="col-sm col-ele" >
+   <h5 style={{color:"#31d2f2"}}><b>Balance of my Black Token</b><br/> </h5><hr class="hr"/>
+<h2>{tid2/1000000000}</h2>
+   </div>&nbsp;&nbsp;&nbsp;
+   <div class="col-sm col-ele">
+   <h5 style={{color:"#31d2f2"}}><b>1 Black</b> <br/></h5> <hr class="hr"/><h2> { parseFloat(1000000000/tid4).toFixed(15)} BNB</h2>
+
+   </div>&nbsp;&nbsp;&nbsp;
+   <div class="col-sm col-ele" >
+   <h5 style={{color:"#31d2f2"}}> <b>Black Token in BurnVault </b> <br/></h5> <hr class="hr"/><h2> {tid6/1000000000}</h2><br />
+
 
    </div>
-   <div class="col-sm-5 col-ele" >
-   <text>Available Black Token in BurnVault  <br/><h4>  {tid6/1000000000}</h4></text><br />
-
-   </div>
-   
 </div><br/>
+<hr class="hr2"/>  
+<br/><br/><br/>
 <div class="row justify-content-around">
-   <div class="col-sm-5 col-ele">
-   <text>1 Black <br/><h4> { parseFloat(1000000000/tid4).toFixed(15)} BNB</h4></text>
+  
+   <div class="col-sm-4 cll" ><br/>
+   <h5 style={{color:"#31d2f2"}}><b>Maximum transaction limit</b></h5>  <hr class="hr"/><h4>{maxta/1000000000}</h4><br />
 
-   </div>
-   <div class="col-sm-5 col-ele" >
-   <text>Maximum transaction limit <br/><h4>{maxta/1000000000}</h4></text><br />
+   </div>&nbsp;&nbsp;&nbsp;&nbsp;
 
-   </div>
-   
-</div>
-
-
-
-
-<div class="container">
-
-<br/><br/>
-
-<div class="row justify-content-around">
-   <div class="col-sm-5 apsw" id="coll">
-{acc!=0 ? 
+   <div class="col-sm cll1" >
+   {acc!=0 ? 
 (
 (
 <div>
@@ -406,32 +399,39 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
   <br />
   <button class="btn btn-primary" onClick={connect}>Connect wallet</button></div>
 ))
-}   
+} 
+   </div>&nbsp;&nbsp;&nbsp;&nbsp;
+
+   <div class="col-sm " >
+     <div class="row">
+       <div class="col-sm cll">
+       <h5>Available limit for User to Swap<b><span style={{color:"#31d2f2"}}> {burnba}</span> </b></h5>
+
+       </div>
+       
+     </div>
+  <div class="row">
+    <div class="col-sm"><br/>
+    <button  class="btn btn-info btn-block mb-3" id="swap" onClick={() => setModalShow1(true)}>
+       Swap
+     </button>
+
+     <MyVerticallyCenteredModal1
+       show={modalShow1}
+       onHide={() => setModalShow1(false)}
+     />
+    </div>
+    
+  </div>
+
    </div>
-   <div class="col-sm-5 apsw">
-
-<br/>
-
-
-
-   <text>Available limit for User to Swap :<b>  {burnba}</b></text><br /><br />
-
-   <Button variant="primary" id="swap" onClick={() => setModalShow1(true)}>
-          Swap
-        </Button>
-  
-        <MyVerticallyCenteredModal1
-          show={modalShow1}
-          onHide={() => setModalShow1(false)}
-        /><br/>
-      </div>
+   
 </div>
 
 
 
-<br/>
 
-    </div> 
+
 
  </div>
      
