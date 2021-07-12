@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 .stepper .nav-tabs {
   position: relative;
@@ -179,6 +180,11 @@ border-color:  rgb(22, 101, 247);
     animation: App-logo-spin infinite 20s linear;
   }
 }
+body {
+  margin: 0;
+  background-color: #000000; 
+}
+
 
 .App-header {
   background-color: #282c34;
@@ -344,7 +350,7 @@ width: 65%;
   text-decoration: none;
   color:#31d2f2;
 }
-.col-ele{
+.col-ele2{
   
   padding-top: 10px;
   border-style: solid;
@@ -365,15 +371,30 @@ border-top: 0.5px;
 .hr2{
 height: 2px;
 border-width: 1px; 
-color: #31d2f2;
+color: #138496;
 opacity: 1;
 }
-.col-ele1{
-  margin-left: 10px;
+.col-ele{
   padding-top: 10px;
   padding-bottom: 10px;
   border-style: solid;
+  border-width: 1px;
+  border-color:#000000;
+  justify-content: center;
+  align-content: center;
+  border-radius: 10px;
+  
+  background-color:#191919 ;
+  
+  font-family: var( --e-global-typography-primary-font-family ), Sans-serif;
+
+}
+.col-ele1{
+  padding-top: 10px;
   font-size: 13px;
+  margin-left: 12px;
+
+  border-style: solid;
   border-width: 1px;
   border-color:#000000;
   justify-content: center;
@@ -404,7 +425,7 @@ opacity: 1;
   justify-content: center;
   align-content: center;
   border-radius: 5px;
-  background-color:#fa3454 ;
+  background-color:#17a2b8 ;
   
   font-family: var( --e-global-typography-primary-font-family ), Sans-serif;
 

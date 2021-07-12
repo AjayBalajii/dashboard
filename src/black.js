@@ -1,4 +1,6 @@
 //import logo from './logo.svg';
+import './index.css';
+
 import './App.css';
 //import vabi from "./vault.js";
 //import { CountdownCircleTimer } from "react-countdown-circle-timer";
@@ -171,7 +173,7 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
 
   return (
     
-    <div  > 
+    <div class="App" > 
 
      <body  class="App container pl-5" >
         

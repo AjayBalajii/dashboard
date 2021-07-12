@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css';
 import { Modal, Button,InputGroup,FormControl } from "react-bootstrap";
 import l from "./suc.png"
 // Import react-circular-progressbar module and styles
@@ -332,7 +333,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
         <div class="container p-5">
 <div class="row justify-content-end">
    <div class="col tiny">
-   <h1 class="head">BURN VAULT</h1>
+   <h1 class="head" style={{color:"#17a2b8"}}>BURN VAULT</h1>
    </div>
    <div class="col">
   
@@ -345,26 +346,26 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 </div>
 <br /><br/><br/>
 <div class="row justify-content-around">
-   <div class="col-sm col-ele" >
-   <h5 style={{color:"#31d2f2"}}><b>Balance of my Black Token</b><br/> </h5><hr class="hr"/>
+   <div class="col-sm col-ele2" >
+   <h5 style={{color:"#17a2b8"}}><b>Balance of my Black Token</b><br/> </h5><hr class="hr"/>
 <h2>{tid2/1000000000}</h2>
-   </div>&nbsp;&nbsp;&nbsp;
-   <div class="col-sm col-ele">
-   <h5 style={{color:"#31d2f2"}}><b>1 Black</b> <br/></h5> <hr class="hr"/><h2> { parseFloat(1000000000/tid4).toFixed(15)} BNB</h2>
+   </div>&nbsp;&nbsp;
+   <div class="col-sm col-ele2">
+   <h5 style={{color:"#17a2b8"}}><b>1 Black</b> <br/></h5> <hr class="hr"/><h2> { parseFloat(1000000000/tid4).toFixed(15)} BNB</h2>
 
-   </div>&nbsp;&nbsp;&nbsp;
-   <div class="col-sm col-ele" >
-   <h5 style={{color:"#31d2f2"}}> <b>Black Token in BurnVault </b> <br/></h5> <hr class="hr"/><h2> {tid6/1000000000}</h2><br />
+   </div>&nbsp;&nbsp;
+   <div class="col-sm col-ele2" >
+   <h5 style={{color:"#17a2b8"}}> <b>Black Token in BurnVault </b> <br/></h5> <hr class="hr"/><h2> {tid6/1000000000}</h2><br />
 
 
    </div>
 </div><br/>
 <hr class="hr2"/>  
-<br/><br/><br/>
+<br/><br/>
 <div class="row justify-content-around">
   
    <div class="col-sm-4 cll" ><br/>
-   <h5 style={{color:"#31d2f2"}}><b>Maximum transaction limit</b></h5>  <hr class="hr"/><h4>{maxta/1000000000}</h4><br />
+   <h5 style={{color:"#17a2b8"}}><b>Maximum transaction limit</b></h5>  <hr class="hr"/><h4>{maxta/1000000000}</h4><br />
 
    </div>&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -379,14 +380,14 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 <div>
 <h5>Before Swap we want to approve first</h5>
 <br />
-<button class="btn btn-primary" onClick={approve}>Approve</button>
+<button class="btn btn-dark" onClick={approve}>Approve</button>
 </div>
 )
 ):
 (
 (
 <div>
- <img src={l} height={80} width={150}/><br/>
+ <img src={l} height={90} width={100}/><br/>
  <h4>Approved</h4>
 </div>
 )
@@ -397,7 +398,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 ((
   <div><h5>Please Check whether metamask is connected?</h5>
   <br />
-  <button class="btn btn-primary" onClick={connect}>Connect wallet</button></div>
+  <button class="btn btn-dark" onClick={connect}>Connect wallet</button></div>
 ))
 } 
    </div>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -405,16 +406,16 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
    <div class="col-sm " >
      <div class="row">
        <div class="col-sm cll">
-       <h5>Available limit for User to Swap<b><span style={{color:"#31d2f2"}}> {burnba}</span> </b></h5>
+       <h5>Available limit for User to Swap<b><span style={{color:"#17a2b8"}}> {burnba}</span> </b></h5>
 
        </div>
        
-     </div>
+     </div><br/>
   <div class="row">
-    <div class="col-sm"><br/>
-    <button  class="btn btn-info btn-block mb-3" id="swap" onClick={() => setModalShow1(true)}>
+    <div class="col-sm btn btn-info" id="swap" onClick={() => setModalShow1(true)}>
+    
        Swap
-     </button>
+    
 
      <MyVerticallyCenteredModal1
        show={modalShow1}
