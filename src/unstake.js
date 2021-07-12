@@ -11,6 +11,7 @@ import Usc5 from "./Usc5";
 import web3 from './web3';
 import token from './token';
 import Staking1 from "./Staking (1)";
+import Usc1 from "./usc1";
 
 function Unstake(){
 
@@ -59,7 +60,7 @@ var widd=async()=>{
       case 0:
         return(<C2/>);
        case 1:
-           return(<C1u/>); 
+           return(<Usc1/>); 
         case 2:
           {
 
@@ -149,7 +150,7 @@ var widd=async()=>{
 
     return(
 <div>
-        <h3>Unstake your BLACK</h3>
+        <h2>Unstake your BLACK</h2>
 <Stepper orientation="horizontal" activeStep={activeStep} style={{backgroundColor:"black",color:"white"}}>
 <Step >
 <StepLabel></StepLabel>

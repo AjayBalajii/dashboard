@@ -222,7 +222,7 @@ if(window.c!=1){
 
     return(
         <div>
-<h2>Stake your BLACK</h2><br/>
+<h2>Stake your BLACK</h2>
 <Stepper orientation="horizontal" activeStep={activeStep} style={{backgroundColor:"black",color:"white"}}>
 <Step>
 <StepIcon>{n}</StepIcon>

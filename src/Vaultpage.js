@@ -16,11 +16,7 @@ import Sc2 from './sc2';
 import {fs,v1} from './sc2';
 
 
-const ss=async (props)=>{
-  alert(v1)
-  
-  
-}
+
 
 
 function MyVerticallyCenteredModal1(props) {
@@ -155,6 +151,7 @@ const[t1,setTim1 ] = useState("");
 var[ltime,setltime] = useState("");
 const[t4,setTime4] = useState("");
   var[t5,settime5]=useState("");
+  var[acc,setacc]=useState("");
 
 
   const connect = async() => {
@@ -172,9 +169,13 @@ const[t4,setTime4] = useState("");
 //timer
 
     let account = await web3.eth.getAccounts();
+    if(account!=0){
+      setacc(await web3.eth.getAccounts());
 
-
-
+    }
+else{
+  setacc(0);
+}
     
    
     if(account!=0){
@@ -255,35 +256,24 @@ setcount(count);
 
    }
 if(account!=0){
-  document.getElementById("mm").style.visibility="hidden";
-  document.getElementById("cc5").style.visibility="hidden";
+  
 
-if(tid3=true){
-   document.getElementById("sh").style.visibility="visible";
-   document.getElementById("sh1").style.visibility="visible";
-   document.getElementById("ap").style.visibility="hidden";
-   document.getElementById("apbtn").style.visibility="hidden";
-
+if(tid3==true){
+  window.cardv=2;
+  
 }
 else{
-  document.getElementById("ap").style.visibility="visible";
-   document.getElementById("apbtn").style.visibility="visible";
-   document.getElementById("sh").style.visibility="hidden";
-   document.getElementById("sh1").style.visibility="hidden";
-   document.getElementById("swap").style.visibility="hidden";
+  window.cardv=3;
 
+  
 }
 }
 else{
-  document.getElementById("mm").style.visibility="visible";
-  document.getElementById("sh1").style.visibility="hidden";
-  document.getElementById("ap").style.visibility="hidden";
-  document.getElementById("apbtn").style.visibility="hidden";
-  document.getElementById("sh").style.visibility="hidden";
+
+
   document.getElementById("swap").style.visibility="hidden";
 
 }
-
 
    
   }
@@ -340,7 +330,6 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 
      <center>
         <div class="container p-5">
-        
 <div class="row justify-content-end">
    <div class="col tiny">
    <h1 class="head">BURN VAULT</h1>
@@ -386,23 +375,44 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 <br/><br/>
 
 <div class="row justify-content-around">
-   <div class="col-sm-5 apsw">
-
-
-   <h3 id="mm">Please connect metamask .....</h3><br/>
- <button id="cc5" class="btn btn-info btn-bloc cc"  onClick={connect}>connect wallet</button>
-
-     
-<h5 id="ap">Before Swap we want to approve first</h5><br/>
-<button class="btn btn-primary" id="apbtn" onClick={approve}>Approve</button><br/>
-<img src={l} alt="" id="sh" height="100px" width="150px"/>
-<h3 id="sh1">Approved</h3>
+   <div class="col-sm-5 apsw" id="coll">
+{acc!=0 ? 
+(
+(
+<div>
+{ tid3 === true ? 
+(
+(
+<div>
+<h5>Before Swap we want to approve first</h5>
+<br />
+<button class="btn btn-primary" onClick={approve}>Approve</button>
+</div>
+)
+):
+(
+(
+<div>
+ <img src={l} height={80} width={150}/><br/>
+ <h4>Approved</h4>
+</div>
+)
+)}
+</div>
+)
+):
+((
+  <div><h5>Please Check whether metamask is connected?</h5>
+  <br />
+  <button class="btn btn-primary" onClick={connect}>Connect wallet</button></div>
+))
+}   
    </div>
    <div class="col-sm-5 apsw">
 
 <br/>
 
-<br/><br/>
+
 
    <text>Available limit for User to Swap :<b>  {burnba}</b></text><br /><br />
 
