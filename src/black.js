@@ -32,7 +32,13 @@ function NewfileMar() {
  var[t5,settime5]=useState("");
 var [count1,setcount]=useState("");
 var [ti,setti]=useState("");
+
+
+
+
   const bal = async() => {
+    document.body.style.backgroundColor="black";
+
     let account = await web3.eth.getAccounts();
 if(account!=0){
 //Returns the Balance of account
@@ -174,7 +180,7 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
   return (
     
     <div class="App" > 
-
+<style>{'body {background-color :"#0000";}'}</style>
      <body  class="App container pl-5" >
         
 <center>

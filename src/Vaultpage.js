@@ -168,6 +168,7 @@ const[t4,setTime4] = useState("");
 
   const bal = async() => {
 //timer
+document.body.style.backgroundColor="black";
 
     let account = await web3.eth.getAccounts();
     if(account!=0){

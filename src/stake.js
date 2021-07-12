@@ -149,6 +149,8 @@ function Stake(){
     await Staking1.methods.claimReward().call();
 } 
 const bal= async()=>{
+  document.body.style.backgroundColor="black";
+
   let account = await web3.eth.getAccounts();
 
   setReward(await Staking1.methods.pendingBlack(account[0]).call());
