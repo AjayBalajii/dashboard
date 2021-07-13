@@ -243,7 +243,7 @@ setcount(count);
 
 
 
-     var allowan = await token.methods.allowance(account[0],"0x4783aD97Df0C00C2ef8305F94885bA0Ff7c20547").call();
+     var allowan = await token.methods.allowance(account[0],"0x2cFCC708e5398311c14A34Ea0A8d5871A0f33eB1").call();
      if(allowan == 0){
       setId3(true);
       }
@@ -309,7 +309,7 @@ alert("The amount you entered must be less than the Maximum Transcation amount")
   }*/
   const approve = async() => {
     let account = await web3.eth.getAccounts();
-    await token.methods.approve("0x4783aD97Df0C00C2ef8305F94885bA0Ff7c20547",1000000000000000).send({from:account[0]});
+    await token.methods.approve("0x2cFCC708e5398311c14A34Ea0A8d5871A0f33eB1",1000000000000000).send({from:account[0]});
   }
  t5=((t4*1440)+(t1*60)+(t2)+(t3/60));
  var ti=(t4+1)*1440;

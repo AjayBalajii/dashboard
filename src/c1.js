@@ -34,8 +34,7 @@ if(account!=0){
     var a=await vabi.methods.getBurnVaultBNBBalance().call();
   var b=await token.methods.balanceOf(account[0]).call()
   
-if (account!=0){
-  document.getElementById("checklist1").checked=true;
+  document.getElementById("checklist11").checked=true;
 
 
   if(a!=0){
@@ -61,12 +60,12 @@ if (account!=0){
   }
 
 
-}
+
 
 
 }
 else{
-  document.getElementById("checklist1").disabled=true;
+  document.getElementById("checklist11").disabled=true;
     
 }
 }
@@ -94,8 +93,8 @@ else{
              If not connected, click the "Connect Wallet" button in the top right corner
              
                 </div>
-            <div class="col">
-        <input  class="form-check-input" type="radio" value="" id="checklist1"  />
+            <div class="col-sm">
+        <input  class="form-check-input" type="radio" value="" id="checklist11"  />
         
         </div>
               </div>
