@@ -181,50 +181,51 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
     
     <div class="App" > 
 <style>{'body {background-color :"#0000";}'}</style>
-     <body  class="App container pl-5" >
+     <body  class="App container " >
         
 <center>
   <div>
-      <div class="container p-5">
+      <div class="container">
       
-       
+      <h1 class="head">BLACK COLLATERAL</h1>
+<br/>
  
-<div class="row">
-  <div class="col">
-  <h1 class="head">BLACK COLLATERAL</h1>
+<div class="row justify-content-center pl-5 ml-1">
+  <div class="col-sm-6 ">
+    <div class="col-elea align-items-center p-5">
+  <h5>
+     Balance of My Black Token <br/><hr class="hr"/></h5><h4> {tid}</h4>
+     </div><br/>
+     <div class="row justify-content-center pl-3">
+       <div class="col-sm col-eleb pt-4" >
+       <text>Number of Transaction in last 24 hours <br/><h4>{con}</h4> </text>
 
-  </div>
-  <div class="col">
-  <div style={{ width: 200, height: 200 }}>
+       </div><br/>
+      
+       <div class="col-sm">
+  <div style={{ width: 150, height: 150 }}>
   <CircularProgressbar value={t5} text={count1} maxValue={ti} styles={buildStyles({
       textSize: '8px',textColor:'white',pathColor:'#17a2b8',
   })}/>
 </div>
+       </div>
+     
+
   </div>
-</div>
-<br/><br/>
-<div class="row justify-content-around">
-   <div class="col-sm-5 col-ele">
-   <text>
-     Balance of My Black Token <br/><h4> {tid}</h4></text>
 
-   </div>
-   <div class="col-sm-5 col-ele" >
-   <text>Number of Transaction in last 24 hours <br/><h4>{con}</h4> </text>
+  </div>
+  
+<div class="col-sm-6 " >
+<h3 style={{textAlign:"center"}}><b>Black Token Transaction History</b></h3>
 
-   </div>
-   
-</div><br/><br/>
-
-
-
-</div>
-   {datas.length === 0 ? null : (
+  <div  style={{overflow:"scroll",height:"360px"}}>
+{datas.length === 0 ? null : (
        <div>
            <div class="container">
-					<h2><b>MY Black Token Transaction History</b></h2>
+				
           
-          <br/><br/>
+          
+         
 
          
                </div>
@@ -238,10 +239,10 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
           <div>
 { a.timeStamp >= dates ? (
 <div class="container-fluid table-responsive">
-<table className="table  table-bordered">
+<table className="table table-striped table-borderless">
           <thead>
           <tr>
-      <th class="cell" scope="col">From</th>
+      
       <th class="cell" scope="col">To</th>
       <th class="cell" scope="col">Value</th>
       <th class="cell" scope="col">TxHash</th>
@@ -251,11 +252,11 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
   <tbody>
   
     <tr>
-      <td class="cell">{a.from }</td>
+      
       <td class="cell">{a.to}</td>
       <td class="cell">{a.value}</td>
       <td class="cell">  
-           <a class="link" href={"https://testnet.bscscan.com/tx/"+a.hash}>{a.hash}</a>
+           <a class="link" href={"https://testnet.bscscan.com/tx/"+a.hash}>view</a>
             </td>
     </tr>
     
@@ -279,8 +280,19 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
 
 )}
 
-
+</div>
       
+</div>
+
+
+
+</div>
+<br/><br/>
+
+
+
+</div>
+ 
      <br/>
 </div>    
 </center>

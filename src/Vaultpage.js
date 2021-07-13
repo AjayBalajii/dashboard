@@ -115,7 +115,7 @@ console.log(bb);
  </InputGroup>
        </Modal.Body>
        <Modal.Footer style={{backgroundColor:"#191919"}}  className="myModal">
-         <Button variant="primary" onClick={swap}>Swap</Button>
+         <Button variant="info" onClick={swap}>Swap</Button>
        </Modal.Footer>
      </Modal>
    );
@@ -331,12 +331,12 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
  
 
      <center>
-        <div class="container p-5">
-<div class="row justify-content-end">
-   <div class="col tiny">
+        <div class="container pl-5 pr-5 ml-2 mr-2">
+<div class="row justify-content-end ">
+   <div class="col-sm tiny ">
    <h1 class="head" style={{color:"#17a2b8"}}>BURN VAULT</h1>
    </div>
-   <div class="col">
+   <div class="col-sm">
   
    <div style={{ width: 200, height: 200 }}>
   <CircularProgressbar value={t5} text={count} maxValue={ti}  styles={buildStyles({
@@ -418,12 +418,12 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
        Swap
     
 
-     <MyVerticallyCenteredModal1
+    
+    </div>
+    <MyVerticallyCenteredModal1
        show={modalShow1}
        onHide={() => setModalShow1(false)}
      />
-    </div>
-    
   </div>
 
    </div>
