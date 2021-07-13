@@ -192,10 +192,7 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
  
 <div class="row justify-content-center pl-5 ml-1">
   <div class="col-sm-6 ">
-    <div class="col-elea align-items-center p-5">
-  <h5>
-     Balance of My Black Token <br/><hr class="hr"/></h5><h4> {tid}</h4>
-     </div><br/>
+  
      <div class="row justify-content-center pl-3">
        <div class="col-sm col-eleb pt-4" >
        <text>Number of Transaction in last 24 hours <br/><h4>{con}</h4> </text>
@@ -211,7 +208,11 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
        </div>
      
 
-  </div>
+  </div><br/>
+  <div class="col-elea align-items-center p-5">
+  <h5>
+     Balance of My Black Token <br/><hr class="hr"/></h5><h4> {tid}</h4>
+     </div>
 
   </div>
   
