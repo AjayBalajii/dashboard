@@ -187,7 +187,7 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
   <div>
       <div class="container">
       
-      <h1 class="head">BLACK COLLATERAL</h1>
+      <h1 class="head">DASHBOARD</h1>
 <br/>
  
 <div class="row justify-content-center pl-5 ml-1">
@@ -195,7 +195,7 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
   
      <div class="row justify-content-center pl-3">
        <div class="col-sm col-elea pt-4" >
-       <text style={{color:"#17a2b8"}}><b>Number of Transaction in last 24 hours </b></text><hr class="hr"/><h4>{con}</h4> 
+       <text style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Number of Transaction in last 24 hours </b></text><hr class="hr"/><h4>{con}</h4> 
 
        </div><br/>
       
@@ -210,16 +210,16 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
 
   </div><br/>
   <div class="col-elea align-items-center p-5">
-  <h5  style={{color:"#17a2b8"}}>
+  <h5  style={{color:"#5bc0de",textTransform:"uppercase"}}>
    <b> Balance of My Black Token</b>  <br/><hr class="hr"/></h5><h4> {tid}</h4>
      </div>
 
   </div>
   
 <div class="col-sm-6 col-elea" >
-<h3 style={{textAlign:"center",color:"#17a2b8"}}><b>Black Token Transaction History</b></h3>
+<h3 style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Black Token Transaction History</b></h3>
 <hr class="hr"/>
-  <div  style={{overflow:"scroll",height:"290px"}}>
+  <div  style={{overflow:"scroll",height:"255px"}}>
 {datas.length === 0 ? null : (
        <div>
            <div class="container">

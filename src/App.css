@@ -266,7 +266,7 @@ body {
   color: white;
 }
 .txt:active{
-  border-color: #31d2f2;
+  border-color: #5bc0de;
 }
 .bm-menu {
   
@@ -344,12 +344,12 @@ width: 65%;
 
 }
 .link{
-  color:#31d2f2;
+  color:#5bc0de;
 
 }
 
 .link:hover{
-  color: #31d2f2;
+  color: #5bc0de;
   text-decoration:underline;
 
 }
@@ -358,14 +358,14 @@ width: 65%;
   padding-top: 10px;
   border-style: solid;
   border-width: 1px;
-  border-color:#31d2f2;
+  border-color:#5bc0de;
   justify-content: center;
   align-content: center;
   border-radius: 5px;
   background-color:#070a0c ;
   -webkit-box-shadow: 0 10px 0px -8px #777;
   -moz-box-shadow: 0 10px 0px -9px #777;
-       box-shadow: 0 -21px 2px -15px #31d2f2;
+       box-shadow: 0 -21px 2px -15px #5bc0de;
   font-family: var( --e-global-typography-primary-font-family ), Sans-serif;
 }
 .hr{
@@ -418,7 +418,7 @@ opacity: 1;
   background-color: #000000;
 }
 ::-webkit-scrollbar-thumb{
-  background-color: #31d2f2;
+  background-color: #5bc0de;
   border-radius: 100px;
 }
 
@@ -426,7 +426,7 @@ opacity: 1;
   padding-top: 10px;
   border-style: solid;
   border-width: 1px;
-  border-color:#31d2f2;
+  border-color:#5bc0de;
   justify-content: center;
   align-content: center;
   border-radius: 5px;
@@ -572,7 +572,7 @@ body {
 
 .active-tabs  {
   background: #000000;
-  border-bottom: 3px solid #31d2f2;
+  border-bottom: 3px solid #5bc0de;
 }
 
 .active-tabs::before {

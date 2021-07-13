@@ -171,11 +171,11 @@ useEffect(()=>{bal()})
     <Tabs/>
     </div>
     <div class="col-sm-3">
-    <div class=" col-ele"><h5 style={{color:"#17a2b8"}}>Staked</h5><hr style={{height:"0px", width:"90%",margin: "auto"}}/>{userinfo[0]/1000000000}</div><br/>
+    <div class=" col-ele"><h5 style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Staked</b></h5><hr style={{height:"0px", width:"90%",margin: "auto"}}/>{userinfo[0]/1000000000}</div><br/>
  
-    <div class=" col-ele"><h5 style={{color:"#17a2b8"}}>Total BLACK Staked</h5><hr style={{height:"0px", width:"90%",margin: "auto"}}/>{tbs/1000000000}</div><br/>
-    <div class=" col-ele"><h5 style={{color:"#17a2b8"}}>APY</h5><hr style={{height:"0px", width:"90%",margin: "auto"}}/>....</div><br/>
-    <div class=" col-ele"><h5 style={{color:"#17a2b8"}}>Rewards</h5><hr  style={{width:"90%", height:"0px",margin: "auto"}}/>{reward/1000000000}
+    <div class=" col-ele"><h5 style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Total BLACK Staked</b></h5><hr style={{height:"0px", width:"90%",margin: "auto"}}/>{tbs/1000000000}</div><br/>
+    <div class=" col-ele"><h5 style={{color:"#5bc0de",textTransform:"uppercase"}}><b>APY</b></h5><hr style={{height:"0px", width:"90%",margin: "auto"}}/>....</div><br/>
+    <div class=" col-ele"><h5 style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Rewards</b></h5><hr  style={{width:"90%", height:"0px",margin: "auto"}}/>{reward/1000000000}
     
     <br/><br/>
 

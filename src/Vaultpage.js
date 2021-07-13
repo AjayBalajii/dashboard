@@ -334,11 +334,11 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
         <div class="container pl-5 pr-5 ml-2 mr-2">
 <div class="row justify-content-end ">
    <div class="col-sm tiny ">
-   <h1 class="head" style={{color:"#17a2b8"}}>BURN VAULT</h1>
+   <h1 class="head" style={{color:"#ffff",textTransform:"uppercase"}}>BURN VAULT</h1>
    </div>
    <div class="col-sm">
   
-   <div style={{ width: 200, height: 200 }}>
+   <div style={{ width: 150, height: 150 }}>
   <CircularProgressbar value={t5} text={count} maxValue={ti}  styles={buildStyles({
       textSize: '8px',textColor:'white',pathColor:'#17a2b8',
   })}/>
@@ -348,15 +348,15 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 <br /><br/><br/>
 <div class="row justify-content-around">
    <div class="col-sm col-ele2" >
-   <h5 style={{color:"#17a2b8"}}><b>Balance of my Black Token</b><br/> </h5><hr class="hr"/>
+   <h5 style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Balance of Black Token</b><br/> </h5><hr class="hr"/>
 <h2>{tid2/1000000000}</h2>
    </div>&nbsp;&nbsp;
    <div class="col-sm col-ele2">
-   <h5 style={{color:"#17a2b8"}}><b>1 Black</b> <br/></h5> <hr class="hr"/><h2> { parseFloat(1000000000/tid4).toFixed(15)} BNB</h2>
+   <h5 style={{color:"#5bc0de",textTransform:"uppercase"}}><b>1 Black</b> <br/></h5> <hr class="hr"/><h2> { parseFloat(1000000000/tid4).toFixed(15)} BNB</h2>
 
    </div>&nbsp;&nbsp;
    <div class="col-sm col-ele2" >
-   <h5 style={{color:"#17a2b8"}}> <b>Black Token in BurnVault </b> <br/></h5> <hr class="hr"/><h2 style={{fontFamily:"Dosis,sans-serif"}}>  {tid6/1000000000}</h2><br />
+   <h5 style={{color:"#5bc0de",textTransform:"uppercase"}}> <b>Black Token in BurnVault </b> <br/></h5> <hr class="hr"/><h2 style={{fontFamily:"Dosis,sans-serif"}}>  {tid6/1000000000}</h2><br />
 
 
    </div>
@@ -366,7 +366,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 <div class="row justify-content-around">
   
    <div class="col-sm-4 cll" ><br/>
-   <h5 style={{color:"#17a2b8"}}><b>Maximum transaction limit</b></h5>  <hr class="hr"/><h4>{maxta/1000000000}</h4><br />
+   <h5 style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Maximum transaction limit</b></h5>  <hr class="hr"/><h4>{maxta/1000000000}</h4><br />
 
    </div>&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -407,7 +407,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
    <div class="col-sm " >
      <div class="row">
        <div class="col-sm cll">
-       <h5>Available limit for User to Swap<b><span style={{color:"#17a2b8"}}> {burnba}</span> </b></h5>
+       <h5>Available limit for User to Swap<b><span style={{color:"#5bc0de",textTransform:"uppercase"}}> {burnba}</span> </b></h5>
 
        </div>
        

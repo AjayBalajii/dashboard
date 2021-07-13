@@ -26,7 +26,6 @@ const[b2,setb2 ] = useState("");
 const bal=async()=>{
 
   const account = await web3.eth.getAccounts();
-  
 if(account!=0){
   setb1( await vabi.methods.getBurnVaultBNBBalance().call());
   setb2(await token.methods.balanceOf(account[0]).call());
@@ -34,8 +33,14 @@ if(account!=0){
     var a=await vabi.methods.getBurnVaultBNBBalance().call();
   var b=await token.methods.balanceOf(account[0]).call()
   
-  document.getElementById("checklist11").checked=true;
+  var cc1=document.getElementById("checklist11");
+  var cc2=document.getElementById("checklist2");
+  var cc3=document.getElementById("checklist3");
+  var cc4=document.getElementById("checklist4");
 
+  if( cc1!=null&&cc2!=null&&cc3!=null&&cc4!=null){
+  cc1=cc1.checked=true;
+  
 
   if(a!=0){
   setc1(document.getElementById("checklist3").checked=true);
@@ -65,8 +70,10 @@ if(account!=0){
 
 }
 else{
+  if(cc1!=null)
   document.getElementById("checklist11").disabled=true;
     
+}
 }
 }
 /*function click(){

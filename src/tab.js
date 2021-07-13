@@ -103,19 +103,19 @@ function Tabs() {
           className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(1)}
         >
-          Stake
+          STAKE
         </button>
         <button
           className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(2)}
         >
-          Unstake
+          UNSTAKE
         </button>
         <button
           className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(3)}
         >
-          Withdraw
+          WITHDRAW
         </button>
        
     </div>
@@ -142,7 +142,7 @@ function Tabs() {
         >
                     <br/><br/>
 
-          <h2>Emergency Withdraw</h2>
+          <h2 style={{color:"#ffff",textTransform:"uppercase"}}>Emergency Withdraw</h2>
           <br/>
           <br/>
          <button class="btn btn-info" onClick={wi}>Withdraw</button>

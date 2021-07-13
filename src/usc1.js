@@ -35,38 +35,44 @@ if(account!=0){
   var b=await token.methods.balanceOf(account[0]).call()
   
 if (account!=0){
-  document.getElementById("checklist1").checked=true;
+  var cc1=document.getElementById("ch1");
+  var cc2=document.getElementById("ch2");
+  var cc3=document.getElementById("ch3");
+  var cc4=document.getElementById("ch4");
+
+  if( cc1!=null&&cc2!=null&&cc3!=null&&cc4!=null){
+  document.getElementById("ch1").checked=true;
 
 
   if(a!=0){
-  setuc1(document.getElementById("checklist3").checked=true);
-   setuc2(document.getElementById("checklist4").checked=true);
+  setuc1(document.getElementById("ch3").checked=true);
+   setuc2(document.getElementById("ch4").checked=true);
   
   }
 
   else{
-    setuc2(document.getElementById("checklist4").disabled=true);
-   setuc3(document.getElementById("checklist3").disabled=true);
+    setuc2(document.getElementById("ch4").disabled=true);
+   setuc3(document.getElementById("ch3").disabled=true);
    
   }
   if(b!=0){
-    setuc3(document.getElementById("checklist2").checked=true);
+    setuc3(document.getElementById("ch2").checked=true);
 
   }
   
   else{
-    setuc1(document.getElementById("checklist2").disabled=true);
+    setuc1(document.getElementById("ch2").disabled=true);
 
    // document.getElementById("next").disabled=true;
   }
 
-
+  }
 }
 
 
 }
 else{
-  document.getElementById("checklist1").disabled=true;
+  document.getElementById("ch1").disabled=true;
     
 }
 }
@@ -95,7 +101,7 @@ else{
              
                 </div>
             <div class="col">
-        <input  class="form-check-input" type="radio" value="" id="checklist1"  />
+        <input  class="form-check-input" type="radio" value="" id="ch1"  />
         
         </div>
               </div>
@@ -110,7 +116,7 @@ else{
         
                 </div>
             <div class="col">
-        <input  class="form-check-input" type="radio" value="" id="checklist2"  />
+        <input  class="form-check-input" type="radio" value="" id="ch2"  />
         
         </div>
               </div>
@@ -125,7 +131,7 @@ else{
        <b>BNB Balance: {b1/1000000000}  </b>
           </div>
             <div class="col">
-        <input  class="form-check-input" type="radio" id="checklist3"  />
+        <input  class="form-check-input" type="radio" id="ch3"  />
         
         </div>
               </div>
@@ -137,7 +143,7 @@ else{
              You cannot stake if you have an active BLACK unstake/withdrawal request    </div>
           
              <div class="col">
-        <input  class="form-check-input "  type="radio"  id="checklist4"  />
+        <input  class="form-check-input "  type="radio"  id="ch4"  />
         
         </div>
                 </div>
