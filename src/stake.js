@@ -137,7 +137,7 @@ function Stake(){
     const [modalShow1, setModalShow1] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
     //const [modalShow3, setModalShow3] = React.useState(false);
-
+const [userinfo,setuserinfo]=useState([]);
     const [reward,setReward]=useState("");
   const [tbs,setTbs]=useState("");
 
@@ -154,7 +154,9 @@ const bal= async()=>{
   let account = await web3.eth.getAccounts();
 
   setReward(await Staking1.methods.pendingBlack(account[0]).call());
-  setTbs(await token.methods.balanceOf("0xf1ff561190950Ed9020fe62DB83045dED760A606").call())
+  setTbs(await token.methods.balanceOf("0xf1ff561190950Ed9020fe62DB83045dED760A606").call());
+  setuserinfo(await Staking1.methods.userInfo(account[0]).call());
+ // await Staking1.methods.userInfo(account[0]).call()
 }
 useEffect(()=>{bal()})
 
@@ -169,12 +171,11 @@ useEffect(()=>{bal()})
     <Tabs/>
     </div>
     <div class="col-sm-3">
-    <div class=" col-ele">Staked<br/><hr style={{height:"0px", width:"90%",margin: "auto"}}/>....</div><br/>
-    <div class=" col-ele">Unstaked<br/><hr  style={{height:"0px",width:"90%",margin: "auto"}}/>....</div><br/>
+    <div class=" col-ele"><h5 style={{color:"#17a2b8"}}>Staked</h5><hr style={{height:"0px", width:"90%",margin: "auto"}}/>{userinfo[0]/1000000000}</div><br/>
  
-    <div class=" col-ele">Total BLACK Staked<br/><hr style={{height:"0px", width:"90%",margin: "auto"}}/>{tbs/1000000000}</div><br/>
-    <div class=" col-ele">APY<br/><hr style={{height:"0px", width:"90%",margin: "auto"}}/>....</div><br/>
-    <div class=" col-ele">Rewards<br/><hr  style={{width:"90%", height:"0px",margin: "auto"}}/>{reward}
+    <div class=" col-ele"><h5 style={{color:"#17a2b8"}}>Total BLACK Staked</h5><hr style={{height:"0px", width:"90%",margin: "auto"}}/>{tbs/1000000000}</div><br/>
+    <div class=" col-ele"><h5 style={{color:"#17a2b8"}}>APY</h5><hr style={{height:"0px", width:"90%",margin: "auto"}}/>....</div><br/>
+    <div class=" col-ele"><h5 style={{color:"#17a2b8"}}>Rewards</h5><hr  style={{width:"90%", height:"0px",margin: "auto"}}/>{reward/1000000000}
     
     <br/><br/>
 

@@ -449,6 +449,7 @@ opacity: 1;
 
 }
 .col-elea{
+  padding-top: 10px;
   background-color:#070a0c ;
   border-radius: 10px;
   border-style: solid;
@@ -457,6 +458,15 @@ opacity: 1;
 
 }
 .col-eleb{
+  background-color:#070a0c ;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color:#17a2b8;
+
+}
+.col-elec{
+  padding: 5px;
   background-color:#070a0c ;
   border-radius: 10px;
   border-style: solid;

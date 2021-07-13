@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState,useEffect } from "react";
 import "./App.css";
 import web3 from './web3';
 import token from './token.js';
+import l from "./suc.png"
 
 
 function Sc3(){
+const [tid3,setId3]=useState("");
+    const bal=async()=>{
+        let account = await web3.eth.getAccounts();
+
+        var allowan = await token.methods.allowance(account[0],"0x4783aD97Df0C00C2ef8305F94885bA0Ff7c20547").call();
+
+        if(allowan == 0){
+            setId3(true);
+            }
+            else{
+         setId3(false);
+            }
+    }
+    useEffect(()=>{bal()})
+
     const approve = async() => {
         let account = await web3.eth.getAccounts();
-        await token.methods.approve("0x4783aD97Df0C00C2ef8305F94885bA0Ff7c20547",1000000000000000).send({from:account[0]});
+        await token.methods.approve("0xf1ff561190950Ed9020fe62DB83045dED760A606",1000000000000000).send({from:account[0]});
       }
 
     return(
@@ -15,9 +31,24 @@ function Sc3(){
 <br/>
 <br/>
 <br/>
-<h4>Before Stake we should Approve first</h4><br/>
-<button class="btn btn-info" id="apbtn" onClick={approve}>Approve</button><br/>
-
+{ tid3 === true ? 
+(
+(
+<div>
+<h5>Before Swap we want to approve first</h5>
+<br />
+<button class="btn btn-dark" onClick={approve}>Approve</button>
+</div>
+)
+):
+(
+(
+<div>
+ <img src={l} height={90} width={100}/><br/>
+ <h4>Approved</h4>
+</div>
+)
+)}
 <br/>
 <br/>
 

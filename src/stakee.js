@@ -65,7 +65,7 @@ function Stakee(){
     
         let account = await web3.eth.getAccounts();
     
-    var am =window.v;
+    var am =window.v*1000000000;
     alert(am);
     if(am!=0){
         await Staking1.methods.deposit(am).send({from:account[0]});

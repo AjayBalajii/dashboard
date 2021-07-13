@@ -194,8 +194,8 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
   <div class="col-sm-6 ">
   
      <div class="row justify-content-center pl-3">
-       <div class="col-sm col-eleb pt-4" >
-       <text>Number of Transaction in last 24 hours <br/><h4>{con}</h4> </text>
+       <div class="col-sm col-elea pt-4" >
+       <text style={{color:"#17a2b8"}}><b>Number of Transaction in last 24 hours </b></text><hr class="hr"/><h4>{con}</h4> 
 
        </div><br/>
       
@@ -210,16 +210,16 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
 
   </div><br/>
   <div class="col-elea align-items-center p-5">
-  <h5>
-     Balance of My Black Token <br/><hr class="hr"/></h5><h4> {tid}</h4>
+  <h5  style={{color:"#17a2b8"}}>
+   <b> Balance of My Black Token</b>  <br/><hr class="hr"/></h5><h4> {tid}</h4>
      </div>
 
   </div>
   
-<div class="col-sm-6 " >
-<h3 style={{textAlign:"center"}}><b>Black Token Transaction History</b></h3>
-
-  <div  style={{overflow:"scroll",height:"360px"}}>
+<div class="col-sm-6 col-elea" >
+<h3 style={{textAlign:"center",color:"#17a2b8"}}><b>Black Token Transaction History</b></h3>
+<hr class="hr"/>
+  <div  style={{overflow:"scroll",height:"290px"}}>
 {datas.length === 0 ? null : (
        <div>
            <div class="container">

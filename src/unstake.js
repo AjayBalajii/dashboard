@@ -44,7 +44,7 @@ function Unstake(){
 var widd=async()=>{
 
   let account = await web3.eth.getAccounts();
-  var wi=window.v;
+  var wi=window.v*1000000000;
   alert(wi);
 
   if(wi!=0){

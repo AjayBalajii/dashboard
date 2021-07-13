@@ -356,7 +356,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 
    </div>&nbsp;&nbsp;
    <div class="col-sm col-ele2" >
-   <h5 style={{color:"#17a2b8"}}> <b>Black Token in BurnVault </b> <br/></h5> <hr class="hr"/><h2> {tid6/1000000000}</h2><br />
+   <h5 style={{color:"#17a2b8"}}> <b>Black Token in BurnVault </b> <br/></h5> <hr class="hr"/><h2 style={{fontFamily:"Dosis,sans-serif"}}>  {tid6/1000000000}</h2><br />
 
 
    </div>
@@ -413,7 +413,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
        
      </div><br/>
   <div class="row">
-    <div class="col-sm btn btn-info" id="swap" onClick={() => setModalShow1(true)}>
+    <div class="col-sm btn btn-lg btn-info p-3" id="swap" onClick={() => setModalShow1(true)}>
     
        Swap
     
