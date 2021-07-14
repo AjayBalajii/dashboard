@@ -63,7 +63,7 @@ if(am!=0){
   
         </Modal.Body>
         <Modal.Footer style={{backgroundColor:"#191919"}}  className="myModal">
-          <Button variant="info" onClick={stake1}>Stake</Button>
+          <button class="btn-flat" onClick={stake1}>Stake</button>
         </Modal.Footer>
       </Modal>
     );
@@ -98,7 +98,7 @@ if(am!=0){
           <Modal.Header className="myModal" style={{backgroundColor:"#191919",color:"white"}} closeButton>
              
             <Modal.Title id="contained-modal-title-vcenter" >
-              Amount to Withdraw
+              Amount to Unstake
             </Modal.Title><br/><br/>
            
           </Modal.Header>
@@ -117,7 +117,7 @@ if(am!=0){
     
           </Modal.Body>
           <Modal.Footer style={{backgroundColor:"#191919"}}  className="myModal">
-            <Button variant="info" onClick={wid1}>Withdraw</Button>
+            <button className="btn-flat" onClick={wid1}>Unstake</button>
           </Modal.Footer>
         </Modal>
       );
@@ -145,8 +145,9 @@ const [userinfo,setuserinfo]=useState([]);
 
 
    const cr=async()=>{
-       alert("claim reward")
-    await Staking1.methods.claimReward().call();
+    let account = await web3.eth.getAccounts();
+
+    await Staking1.methods.claimReward().send({from:account[0]});
 } 
 const bal= async()=>{
   document.body.style.backgroundColor="black";
@@ -179,7 +180,7 @@ useEffect(()=>{bal()})
     
     <br/><br/>
 
-    <button class="btn btn-sm btn-info"  id="swap" onClick={() => setModalShow1(true)}>
+    <button class="btn-flat btn-sm"  id="swap" onClick={() => setModalShow1(true)}>
           Stake
         </button>&nbsp;
   
@@ -189,7 +190,7 @@ useEffect(()=>{bal()})
         /> 
         
         
-    <button class="btn btn-sm btn-info"  id="swap" onClick={() => setModalShow2(true)}>
+    <button class="btn-flat btn-sm"  id="swap" onClick={() => setModalShow2(true)}>
           Unstake
         </button>&nbsp;
   
@@ -197,7 +198,7 @@ useEffect(()=>{bal()})
           show={modalShow2}
           onHide={() => setModalShow2(false)}
         />   
-   <button class="btn btn-sm btn-info" onClick={cr}>Claim Rewards</button>
+   <button class="btn-flat btn-sm" onClick={cr}>Claim Rewards</button>
 
 
     </div><br/>

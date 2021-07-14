@@ -13,6 +13,7 @@ import { Navbar } from 'react-bootstrap';
 //import sidebar from './sidebar';
 import { slide as Menu } from 'react-burger-menu';
 import stake from './stake.js';
+import Terms from './terms';
 function App() {
    useEffect(()=>{bal()});
    const bal = async() => {
@@ -56,15 +57,20 @@ integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJ
              <img src={logo} height="70px" alt="" style={{marginLeft:"60px"}}></img>
       </Navbar.Brand>
       <Navbar.Collapse className="justify-content-end">
-      <button id="cc" class="btn btn-info btn-bloc cc"  onClick={connect}>connect wallet</button>
-        <button id="cc1" class="btn btn-info btn-bloc cc1"  ></button>
+      <button id="cc" class="btn  btn-bloc cc"  onClick={connect}>connect wallet</button>
+        <button id="cc1" class="btn-flat  btn-bloc cc1"  ></button>
 
 </Navbar.Collapse>
 </Navbar>
-   <Menu>
+   <Menu >
+   <a class="navlink11"   href="https://blackcollateral.com/">
+
+Home
+</a>
+
    <Link class="navlink11"  exact to="/black">
 
-Blackcollateral Page
+Dashboard
 
 </Link>
  
@@ -72,7 +78,7 @@ Blackcollateral Page
 Burn Vault{' '}
        </Link>
        <Link class="navlink11"  exact to="/stake">
-Stake{' '}
+Staking{' '}
        </Link>
     </Menu>
 
@@ -82,6 +88,7 @@ Stake{' '}
 <Route exact path='/black' component={Black}/>
 <Route exact path='/vault' component={Vault}/>
 <Route exact path='/stake' component={stake}/>
+<Route exact path='/terms' component={Terms}/>
 
 </Switch>
 

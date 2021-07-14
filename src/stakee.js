@@ -15,6 +15,8 @@ import Sc3 from "./sc3";
 import Sc4 from "./sc4";
 import Staking1 from './Staking (1)';
 import token from './token';
+import {BrowserRouter as Router , Route , Link , Switch } from "react-router-dom";
+import Terms from './terms';
 
 
 
@@ -99,16 +101,20 @@ function onc(){
 
         
         }
+        function terns(){
+          window.open('/terms');
+        }
+        
         return(
 
           <div>
 <C1/>
           
 <input  class="form-check-input" onClick={conf} type="checkbox"   id="c4"/>&nbsp;
-        
-        I have read the <a href="#">Terms and Conditions</a>
-        
-          </div>
+     
+        I have read the <Link onClick={terns}>Terms and Conditions</Link>
+    
+ </div>
           
           );
         }
@@ -249,9 +255,9 @@ if(window.c!=1){
 </div>
 <br/>
 <br/>
-<button onClick={previousStep} class="btn btn-info">previous</button>   &nbsp; &nbsp; 
+<button onClick={previousStep} class="btn-flat">Previous</button>   &nbsp; &nbsp; 
 
-     <button onClick={nextStep} id="next" class="btn btn-info" >Next</button>  
+     <button onClick={nextStep} id="next" class="btn-flat">Next</button>  
 
 
         </div>

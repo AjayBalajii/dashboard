@@ -95,8 +95,8 @@ else{
           <div class="row justify-content-center">
             <div class="col-sm col-ele1">
               <div class="row">
-                <div class="col-9">
-                <b>Connected with MetaMask</b> <br/>
+                <div class="col-sm-9" style={{textAlign:"left"}}>
+                <b style={{textAlign:"left"}}>Connected with MetaMask</b> <br/>
              If not connected, click the "Connect Wallet" button in the top right corner
              
                 </div>
@@ -110,7 +110,7 @@ else{
             </div>
             <div class="col-sm col-ele1">
             <div class="row">
-                <div class="col-9">
+                <div class="col-sm-9" style={{textAlign:"left"}}>
                 <b>BLACK available to deposit</b>  <br/><br/>
             <b> Current Balance:{b2/1000000000}</b>
         
@@ -124,7 +124,7 @@ else{
             </div>
             <div class="col-sm col-ele1">
             <div class="row">
-            <div class="col-9">
+            <div class="col-sm-9" style={{textAlign:"left"}}>
         
             <b>BNB available in wallet</b>  <br/>
              BNB is required to pay transaction fees on the Binance Smart Chain network.<br/>
@@ -138,7 +138,7 @@ else{
            </div>   
             <div class="col-sm col-ele1">
             <div class="row">
-                <div class="col-9">
+                <div class="col-sm-9" style={{textAlign:"left"}}>
                 <b>Eligible to stake</b>  <br/>
              You cannot stake if you have an active BLACK unstake/withdrawal request    </div>
           

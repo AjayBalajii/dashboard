@@ -87,8 +87,9 @@ function Tabs() {
 
 
   const wi=async()=>{
-  alert("emergency withdraw")
-    await Staking1.methods.emergencyWithdraw().call();
+    let account = await web3.eth.getAccounts();
+
+    await Staking1.methods.emergencyWithdraw().send({from:account[0]});
   }
 
 
@@ -144,8 +145,9 @@ function Tabs() {
 
           <h2 style={{color:"#ffff",textTransform:"uppercase"}}>Emergency Withdraw</h2>
           <br/>
-          <br/>
-         <button class="btn btn-info" onClick={wi}>Withdraw</button>
+          
+         <button class="btn-flat" onClick={wi}>Withdraw</button><br/><br/>
+         <p style={{textAlign:"left",}}><b>Note:</b> When executing an emergency withdraw, you get back your funds immediately but with this function, you don't received any rewards.</p>
          
           <br/><br/>
           <br/><br/>

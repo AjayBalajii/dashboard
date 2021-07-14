@@ -168,7 +168,7 @@ if(t5>0){
 count1=`Starts in: ${t1}:${t2}:${t3}`;
  }
  else{
-    count1="No Lock";
+    count1=" Unlock";
  }
 
 // usage
@@ -195,14 +195,14 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
   
      <div class="row justify-content-center pl-3">
        <div class="col-sm col-elea pt-4" >
-       <text style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Number of Transaction in last 24 hours </b></text><hr class="hr"/><h4>{con}</h4> 
-
+       <h6  style={{color:"#5bc0de",textTransform:"uppercase"}}>
+   <b> Black Token Balance</b>  <br/><hr class="hr"/></h6><h4> {tid}</h4>
        </div><br/>
       
        <div class="col-sm">
   <div style={{ width: 150, height: 150 }}>
   <CircularProgressbar value={t5} text={count1} maxValue={ti} styles={buildStyles({
-      textSize: '8px',textColor:'white',pathColor:'#17a2b8',
+      textSize: '8px',textColor:'white',pathColor:'#5bc0de',
   })}/>
 </div>
        </div>
@@ -210,76 +210,176 @@ count1=`Starts in: ${t1}:${t2}:${t3}`;
 
   </div><br/>
   <div class="col-elea align-items-center p-5">
-  <h5  style={{color:"#5bc0de",textTransform:"uppercase"}}>
-   <b> Balance of My Black Token</b>  <br/><hr class="hr"/></h5><h4> {tid}</h4>
+  <text style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Number of Transaction in last 24 hours </b></text><hr class="hr"/><h4>{con}</h4> 
+
+  
      </div>
 
   </div>
   
 <div class="col-sm-6 col-elea" >
-<h3 style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Black Token Transaction History</b></h3>
+<h3 style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Transaction History</b></h3>
 <hr class="hr"/>
   <div  style={{overflow:"scroll",height:"255px"}}>
-{datas.length === 0 ? null : (
+    <div class="row ">
+      <div class="col-sm-6">
+      {datas.length === 0 ? null : (
        <div>
-           <div class="container">
-				
           
-          
-         
 
-         
-               </div>
-              
-{datas.map((a)=>{
-     
-	   //console.log(`a`, a)
-
-
-        return (
-          <div>
-{ a.timeStamp >= dates ? (
 <div class="container-fluid table-responsive">
-<table className="table table-striped table-borderless">
+<table className="table  table-borderless">
           <thead>
           <tr>
       
-      <th class="cell" scope="col">To</th>
-      <th class="cell" scope="col">Value</th>
-      <th class="cell" scope="col">TxHash</th>
+    <th class="cell " scope="col">To</th>
+    
 
     </tr>
   </thead>
   <tbody>
+
+  {datas.map((a)=>{
+     return (
+       <div >
+{ a.timeStamp >= dates ? (
   
     <tr>
-      
+
       <td class="cell">{a.to}</td>
-      <td class="cell">{a.value}</td>
-      <td class="cell">  
-           <a class="link" href={"https://testnet.bscscan.com/tx/"+a.hash}>view</a>
-            </td>
+     
     </tr>
     
-  </tbody>
-  
+  ):null }
+  </div>
+       
+      ) 
+       
+   
+ })}
+    </tbody>
+    
+
 </table>
 
 
 
 </div>
 
-  ):null }
-       </div>
-            
-           ) 
-            
-        
-      })}
+  
 
       </div>
 
 )}
+      </div>
+      <div class="col-sm-3">
+      {datas.length === 0 ? null : (
+       <div>
+          
+
+<div class="container table-responsive">
+<table className="table  table-borderless">
+          <thead>
+          <tr>
+      
+    <th class="cell " scope="col">Value</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+
+  {datas.map((a)=>{
+     return (
+       <div >
+{ a.timeStamp >= dates ? (
+  
+    <tr>
+
+     
+      <td class="cell">{a.value}</td>
+     
+    </tr>
+    
+  ):null }
+  </div>
+       
+      ) 
+       
+   
+ })}
+    </tbody>
+    
+
+</table>
+
+
+
+</div>
+
+  
+
+      </div>
+
+)}
+      </div>
+      <div class="col-sm-3">
+
+      {datas.length === 0 ? null : (
+       <div>
+          
+
+<div class="container table-responsive">
+<table className="table  table-borderless">
+          <thead>
+          <tr>
+      
+   
+    <th class="cell " scope="col">TxHash</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+
+  {datas.map((a)=>{
+     return (
+       <div >
+{ a.timeStamp >= dates ? (
+  
+    <tr>
+
+     
+      <td class="cell">  
+           <a class="link" href={"https://testnet.bscscan.com/tx/"+a.hash}>view</a>
+            </td>
+    </tr>
+    
+  ):null }
+  </div>
+       
+      ) 
+       
+   
+ })}
+    </tbody>
+    
+
+</table>
+
+
+
+</div>
+
+  
+
+      </div>
+
+)}
+      </div>
+    </div>
+
+
 
 </div>
       

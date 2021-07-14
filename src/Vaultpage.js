@@ -246,9 +246,11 @@ setcount(count);
      var allowan = await token.methods.allowance(account[0],"0x2cFCC708e5398311c14A34Ea0A8d5871A0f33eB1").call();
      if(allowan == 0){
       setId3(true);
+      document.getElementById("swap").disabled=false;
       }
       else{
    setId3(false);
+
       }
       console.log(tid3);
       setId6(await vabi.methods.getBurnVaultBLACKBalance().call());
@@ -273,7 +275,6 @@ else{
 else{
 
 
-  document.getElementById("swap").style.visibility="hidden";
 
 }
 
@@ -318,7 +319,7 @@ alert("The amount you entered must be less than the Maximum Transcation amount")
 count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
  }
  else{
-    count="No Lock";
+    count="Unlock";
  }
  
   return (
@@ -348,7 +349,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 <br /><br/><br/>
 <div class="row justify-content-around">
    <div class="col-sm col-ele2" >
-   <h5 style={{color:"#5bc0de",textTransform:"uppercase"}}><b>Balance of Black Token</b><br/> </h5><hr class="hr"/>
+   <h5 style={{color:"#5bc0de",textTransform:"uppercase"}}><b> Black Token Balance</b><br/> </h5><hr class="hr"/>
 <h2>{tid2/1000000000}</h2>
    </div>&nbsp;&nbsp;
    <div class="col-sm col-ele2">
@@ -379,7 +380,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
 (
 (
 <div>
-<h5>Before Swap we want to approve first</h5>
+<h5>Before Swap we want to Approve first</h5>
 <br />
 <button class="btn btn-dark" onClick={approve}>Approve</button>
 </div>
@@ -413,13 +414,28 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
        
      </div><br/>
   <div class="row">
-    <div class="col-sm btn btn-lg btn-info p-3" id="swap" onClick={() => setModalShow1(true)}>
+    {
+      tid3===true ?((
+        <button class="btn-flat col-sm  btn-lg p-4" id="swap" onClick={() => setModalShow1(true)} disabled >
     
        Swap
     
 
     
-    </div>
+    </button>
+      )):
+      ((
+
+        <button class="btn-flat col-sm  btn-lg p-4" id="swap" onClick={() => setModalShow1(true)}  >
+    
+        Swap
+     
+ 
+     
+     </button>
+      ))
+    }
+   
     <MyVerticallyCenteredModal1
        show={modalShow1}
        onHide={() => setModalShow1(false)}
