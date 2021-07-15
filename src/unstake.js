@@ -183,9 +183,9 @@ var widd=async()=>{
 </div>
 <br/>
 <br/>
-<button onClick={previousStep} class="btn btn-info">previous</button>   &nbsp; &nbsp; 
+<button onClick={previousStep} class="btn-flat">previous</button>   &nbsp; &nbsp; 
 
-     <button onClick={nextStep} class="btn btn-info">Next</button>  
+     <button onClick={nextStep} class="btn-flat">Next</button>  
 
 </div>
 

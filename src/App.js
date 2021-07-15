@@ -57,7 +57,7 @@ integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJ
              <img src={logo} height="70px" alt="" style={{marginLeft:"60px"}}></img>
       </Navbar.Brand>
       <Navbar.Collapse className="justify-content-end">
-      <button id="cc" class="btn  btn-bloc cc"  onClick={connect}>connect wallet</button>
+      <button id="cc" class="btn-flat  btn-bloc cc"  onClick={connect}>connect wallet</button>
         <button id="cc1" class="btn-flat  btn-bloc cc1"  ></button>
 
 </Navbar.Collapse>
