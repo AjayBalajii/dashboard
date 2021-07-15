@@ -19,13 +19,16 @@ import {BrowserRouter as Router , Route , Link , Switch } from "react-router-dom
 import Terms from './terms';
 
 
-
+window.v=0;
 
 function Stakee(){
 
   var [stake_value,setStake_value]=useState(0);
     const [toggleState, setToggleState] = useState(1);
-
+const[bb ,setbb]=useState("");
+const[ac ,setac]=useState("");
+const[datas,setId7] = useState("");
+  const [dates,setId8] = useState("");
     const[activeStep,setActiveStep]=useState(0);
       const nextStep =()=>{
       if(activeStep<4){
@@ -77,6 +80,8 @@ function Stakee(){
       }
 
 function onc(){
+  document.getElementById("next").disabled=false;
+
   window.v=document.getElementById("max").value;
   
 }
@@ -88,7 +93,7 @@ function onc(){
     switch(activeStep){
       case 0:{
         function conf(){
-          if(document.getElementById("c4").checked==true){
+          if(document.getElementById("c4").checked==true && ac!=0 ){
             document.getElementById("next").disabled=false;
 
             window.c=1;
@@ -119,8 +124,15 @@ function onc(){
           );
         }
       case 1:{
+       
+        if(window.v==0){
+          document.getElementById("next").disabled=true;
+
+        }
 
         var max = async() =>{
+          document.getElementById("next").disabled=false;
+
           let account = await web3.eth.getAccounts();
 
           var balance = await token.methods.balanceOf(account[0]).call();
@@ -151,13 +163,19 @@ window.v=balance;
           
                       </div>
                       <div class="col-sm">
-                          <button class="btn btn-info" onClick={max}>MAX</button>
+                          <button class="btn-flat" onClick={max}>MAX</button>
                       </div>
                   </div>
                         <br/>
           
           </label>
+          <div class="row">
+              
+
               </div>
+              </div>
+              <p style={{textAlign:"center"}}>Balance:&nbsp;{bb/1000000000}</p>
+
               </div>
           </div>
           <br/>
@@ -172,15 +190,15 @@ window.v=balance;
         return(<Sc4/>);
       case 4:
 if(window.v!=0){
+  
+
   return(
     <div>
       <div class="container"><br/><br/>
-        <h4>successfully done ......</h4>
-        <br/>
+     <h2>Successfully done........</h2>
       </div>
-    </div>
-    
-            );
+      </div>
+  );
 }
 else{
   return(
@@ -204,17 +222,22 @@ else{
 
   }
   
-  function bal(){
-    if (Confirm==0){
-      //document.getElementById("next").disabled=true;
-    }
+  async function bal(){
 
+    let account = await web3.eth.getAccounts();
+    setac(await web3.eth.getAccounts());
+    if(account!=0){
+      setbb(await token.methods.balanceOf(account[0]).call());
+      
 
 if(window.c!=1){
   document.getElementById("next").disabled=true;
 
 }
-
+    }
+    else{
+      document.getElementById("next").disabled=true;
+    }
     
   }
 

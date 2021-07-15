@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import {  useState ,useEffect } from "react";
 import "./App.css";
 import C1u from "./c1";
 import Stepper from '@material-ui/core/Stepper';
@@ -13,21 +13,24 @@ import token from './token';
 import Staking1 from "./Staking (1)";
 import Usc1 from "./usc1";
 import C1 from "./c1";
-
+window.v=0;
 function Unstake(){
 
-
+const[ac,setac]=useState("");
     const[activeStep,setActiveStep]=useState(0);
-  
-    const nextStep =()=>{
+  var [b,setb]=useState([]);
+  const [b1,setb1]=useState([]);
 
-      if (activeStep==3){
+    const nextStep =()=>{
+      
+
+      if (activeStep==2){
       }
-      if(activeStep==4){
+      if(activeStep==3){
        widd();
       }
 
-      if(activeStep<5){
+      if(activeStep<4){
         setActiveStep((currentStep)=>currentStep+1)
         st();
       }
@@ -39,6 +42,8 @@ function Unstake(){
     }
    
     function onc(){
+      document.getElementById("next").disabled=false;
+
       window.v=document.getElementById("max").value;
       
     }
@@ -54,26 +59,48 @@ var widd=async()=>{
 }
 
 }
+async function bal(){
+  setac(await web3.eth.getAccounts());
+  if(ac!=0){
+    setb1( await Staking1.methods.userInfo(ac[0]).call());
+
+  }
+
+  
+  
+}
+
+
+useEffect(()=>{bal()});
 
 
   function st(activeStep){
     switch(activeStep){
       case 0:
+        
         return(<C2/>);
-       case 1:
+       case 1:{
+        
+
            return(<Usc1/>); 
+}
         case 2:
           {
+            if(window.v==0){
+document.getElementById("next").disabled=true;    
+            }
 
             var max = async() =>{
+              document.getElementById("next").disabled=false;
               let account = await web3.eth.getAccounts();
     
-              var balance = await token.methods.balanceOf(account[0]).call();
-              balance=balance/1000000000
+              setb( await Staking1.methods.userInfo(account[0]).call());
+              b[0]=b[0]/1000000000;
     
-              document.getElementById("max").placeholder=balance;
-    window.v=balance; 
+              document.getElementById("max").placeholder=b[0];
+    window.v=b[0]; 
           }
+
             return(
     
               <div class="check" style={{backgroundColor:"#0000 " ,padding:"20px", borderRadius:"20px"}}>
@@ -96,7 +123,7 @@ var widd=async()=>{
               
                           </div>
                           <div class="col-sm">
-                              <button class="btn btn-info" onClick={max}>MAX</button>
+                              <button class="btn-flat" onClick={max}>MAX</button>
                           </div>
                       </div>
                             <br/>
@@ -104,6 +131,7 @@ var widd=async()=>{
               </label>
                   </div>
                   </div>
+                  <p>Balance:&nbsp;{b1[0]/1000000000}</p>
               </div>
               <br/>
                       </div>
@@ -111,11 +139,10 @@ var widd=async()=>{
     
             );
           }
+        
         case 3:
-          return(<Usc4/>);
-        case 4:
           return(<Usc5/>);
-        case 5:
+        case 4:
           if(window.v!=0){
             return(
               <div>
@@ -166,10 +193,7 @@ var widd=async()=>{
 <StepLabel></StepLabel>
 
 </Step>
-<Step>
-  <StepLabel></StepLabel>
-  
-</Step>
+
 <Step>
   <StepLabel></StepLabel>
   
@@ -184,8 +208,7 @@ var widd=async()=>{
 <br/>
 <br/>
 <button onClick={previousStep} class="btn-flat">previous</button>   &nbsp; &nbsp; 
-
-     <button onClick={nextStep} class="btn-flat">Next</button>  
+<button onClick={nextStep} id="next" class="btn-flat">Next</button>  
 
 </div>
 

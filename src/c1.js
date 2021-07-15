@@ -69,12 +69,18 @@ if(account!=0){
 
 
 }
-else{
-  if(cc1!=null)
-  document.getElementById("checklist11").disabled=true;
+
     
 }
+else{
+  
+  document.getElementById("checklist11").disabled=true;
+  document.getElementById("checklist2").disabled=true;
+  document.getElementById("checklist3").disabled=true;
+  document.getElementById("checklist4").disabled=true;
+  
 }
+
 }
 /*function click(){
   if(c1&c2&c3==true){

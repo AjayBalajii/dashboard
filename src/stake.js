@@ -153,11 +153,23 @@ const bal= async()=>{
   document.body.style.backgroundColor="black";
 
   let account = await web3.eth.getAccounts();
+  if(account!=0){
+document.getElementById("swap1").disabled=false;
+document.getElementById("swap2").disabled=false;
+document.getElementById("swap3").disabled=false;
+
 
   setReward(await Staking1.methods.pendingBlack(account[0]).call());
   setTbs(await token.methods.balanceOf("0xf1ff561190950Ed9020fe62DB83045dED760A606").call());
   setuserinfo(await Staking1.methods.userInfo(account[0]).call());
  // await Staking1.methods.userInfo(account[0]).call()
+  }
+  else{
+    document.getElementById("swap1").disabled=true;
+    document.getElementById("swap2").disabled=true;
+    document.getElementById("swap3").disabled=true;
+
+  }
 }
 useEffect(()=>{bal()})
 
@@ -180,7 +192,7 @@ useEffect(()=>{bal()})
     
     <br/><br/>
 
-    <button class="btn-flat btn-sm"  id="swap" onClick={() => setModalShow1(true)}>
+    <button class="btn-flat btn-sm"  id="swap1" onClick={() => setModalShow1(true)}>
           Stake
         </button>&nbsp;
   
@@ -190,7 +202,7 @@ useEffect(()=>{bal()})
         /> 
         
         
-    <button class="btn-flat btn-sm"  id="swap" onClick={() => setModalShow2(true)}>
+    <button class="btn-flat btn-sm"  id="swap2" onClick={() => setModalShow2(true)}>
           Unstake
         </button>&nbsp;
   
@@ -198,7 +210,7 @@ useEffect(()=>{bal()})
           show={modalShow2}
           onHide={() => setModalShow2(false)}
         />   
-   <button class="btn-flat btn-sm" onClick={cr}>Claim Rewards</button>
+   <button class="btn-flat btn-sm" id="swap3" onClick={cr}>Claim Rewards</button>
 
 
     </div><br/>

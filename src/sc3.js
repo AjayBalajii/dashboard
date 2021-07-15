@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import "./App.css";
 import web3 from './web3';
 import token from './token.js';
-import l from "./suc.png"
+import l from "./l.png"
 
 
 function Sc3(){
@@ -44,7 +44,7 @@ const [tid3,setId3]=useState("");
 (
 (
 <div>
- <img src={l} height={90} width={100}/><br/>
+ <img src={l} height={100} width={150}/><br/>
  <h4>Approved</h4>
 </div>
 )

@@ -172,6 +172,9 @@ table.table-bordered > tbody > tr > td{
 .btn:hover{
 border-color: #5bc0de;
 }
+.btn-flat:disabled{
+  background-color: #4693aa;
+}
 
 .App-logo {
   height: 40vmin;

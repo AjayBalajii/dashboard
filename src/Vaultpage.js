@@ -176,6 +176,7 @@ document.body.style.backgroundColor="black";
 
     }
 else{
+  document.getElementById("swap").disabled=true;
   setacc(0);
 }
     
