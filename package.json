@@ -15,7 +15,7 @@
     "jquery": "^3.6.0",
     "link": "^0.1.5",
     "material-ui": "^1.0.0-beta.47",
-    "mdbreact": "^5.0.2",
+    "mdbreact": "^5.1.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",

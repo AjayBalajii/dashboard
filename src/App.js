@@ -13,7 +13,7 @@ import { Navbar } from 'react-bootstrap';
 //import sidebar from './sidebar';
 import { slide as Menu } from 'react-burger-menu';
 import stake from './stake.js';
-import Terms from './terms';
+//import Terms from './terms';
 function App() {
    useEffect(()=>{bal()});
    const bal = async() => {
@@ -88,7 +88,6 @@ Staking{' '}
 <Route exact path='/black' component={Black}/>
 <Route exact path='/vault' component={Vault}/>
 <Route exact path='/stake' component={stake}/>
-<Route exact path='/terms' component={Terms}/>
 
 </Switch>
 

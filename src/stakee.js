@@ -16,11 +16,11 @@ import Sc4 from "./sc4";
 import Staking1 from './Staking (1)';
 import token from './token';
 import {BrowserRouter as Router , Route , Link , Switch } from "react-router-dom";
-import Terms from './terms';
+//import Terms from './terms';
 
 
 window.v=0;
-
+window.c=0;
 function Stakee(){
 
   var [stake_value,setStake_value]=useState(0);
@@ -96,7 +96,7 @@ function onc(){
           if(document.getElementById("c4").checked==true && ac!=0 ){
             document.getElementById("next").disabled=false;
 
-            window.c=1;
+           
           
           }
           else{
@@ -107,7 +107,7 @@ function onc(){
         
         }
         function terns(){
-          window.open('/terms');
+         // window.open('/terms');
         }
         
         return(
@@ -218,9 +218,7 @@ else{
   }
 
 
-  if(window.c==1){
-
-  }
+ 
   
   async function bal(){
 
@@ -229,16 +227,15 @@ else{
     if(account!=0){
       setbb(await token.methods.balanceOf(account[0]).call());
       
-
-if(window.c!=1){
-  document.getElementById("next").disabled=true;
-
+if(window.c==0){
+ var nn=document.getElementById("next");
+ if(nn!=null){
+   nn.disabled=true;
+ }
 }
+
     }
-    else{
-      document.getElementById("next").disabled=true;
-    }
-    
+        
   }
 
 

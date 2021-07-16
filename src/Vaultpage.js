@@ -166,7 +166,7 @@ const[t4,setTime4] = useState("");
 
 
 
-  const bal = async() => {
+  async function bal(){
 //timer
 document.body.style.backgroundColor="black";
 
