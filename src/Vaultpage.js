@@ -13,9 +13,6 @@ import vabi from "./vault.js";
 import React, { useState,useEffect } from "react";
 import web3 from './web3';
 import token from './token.js';
-import Sc2 from './sc2';
-import {fs,v1} from './sc2';
-
 
 
 

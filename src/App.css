@@ -426,10 +426,10 @@ opacity: 1;
   height: 3px;
 }
 ::-webkit-scrollbar-track{
-  background-color: #000000;
+  background-color: transparent;
 }
 ::-webkit-scrollbar-thumb{
-  background-color: #5bc0de;
+  background-color:transparent;
   border-radius: 100px;
 }
 
