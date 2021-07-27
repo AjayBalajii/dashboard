@@ -13,6 +13,7 @@ import vabi from "./vault.js";
 import React, { useState,useEffect } from "react";
 import web3 from './web3';
 import token from './token.js';
+import vault from './vault.js';
 
 
 
@@ -60,8 +61,9 @@ console.log(bb);
         let amount = a * 1000000000;
      
      await vabi.methods.swap(amount).send({from:account[0]});
- 
- }
+ //document.getElementById("nm").reload();
+window.location.reload(); 
+}
  else{
  alert("The amount you entered must be less than the Availabe limit ");
  }}
@@ -330,7 +332,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
  
 
      <center>
-        <div class="container pl-5 pr-5 ml-2 mr-2">
+        <div id="nm" class="container pl-5 pr-5 ml-2 mr-2">
 <div class="row justify-content-end ">
    <div class="col-sm tiny ">
    <h1 class="head" style={{color:"#ffff",textTransform:"uppercase"}}>BURN VAULT</h1>
