@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import web3 from './web3';
 //import token from './token.js';
 import Black from './black.js';
@@ -14,26 +14,21 @@ import { Navbar } from 'react-bootstrap';
 import { slide as Menu } from 'react-burger-menu';
 //import Terms from './terms';
 function App() {
+   const[a,seta]=useState("");
+
    useEffect(()=>{bal()});
    const bal = async() => {
 
    let account = await web3.eth.getAccounts();
-   if(account!=0){
-      document.getElementById("cc").style.visibility="hidden";
-       document.getElementById("cc1").innerHTML=account;
-      }
-      else{
-         document.getElementById("cc").style.visibility="true";
-         document.getElementById("cc1").style.visibility="hidden";
-
-      }
+   seta(await web3.eth.getAccounts());
+  
    }
    const connect = async() => {
       window.ethereum.enable();
      // let account = await web3.eth.getAccounts();
      
    //document.getElementById("cc").style.visibility="hidden";
-   document.getElementById("cc").style.visibility="hidden";
+  // document.getElementById("cc").style.visibility="hidden";
    //window.location.reload();
    }
       
@@ -56,8 +51,21 @@ integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJ
              <img src={logo} height="70px" alt="" style={{marginLeft:"60px"}}></img>
       </Navbar.Brand>
       <Navbar.Collapse className="justify-content-end">
+         {
+            a!=0?((
+               <div>
+                          <button id="cc1" class="btn-flat  btn-bloc cc1"  >{a}</button>
+
+
+               </div>
+            )):
+            ((
+               <div>
       <button id="cc" class="btn-flat  btn-bloc cc"  onClick={connect}>connect wallet</button>
-        <button id="cc1" class="btn-flat  btn-bloc cc1"  ></button>
+
+               </div>
+            ))
+         }
 
 </Navbar.Collapse>
 </Navbar>

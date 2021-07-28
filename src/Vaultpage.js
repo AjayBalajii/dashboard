@@ -159,7 +159,7 @@ const[t4,setTime4] = useState("");
    // let account = await web3.eth.getAccounts();
    
  //document.getElementById("cc").style.visibility="hidden";
- document.getElementById("cc").style.visibility="hidden";
+ //document.getElementById("cc").style.visibility="hidden";
  //window.location.reload();
  }
 
@@ -175,14 +175,13 @@ document.body.style.backgroundColor="black";
 
     }
 else{
-  document.getElementById("swap").disabled=true;
+  
   setacc(0);
 }
     
    
     if(account!=0){
-     document.getElementById("cc").style.visibility="hidden";
-      document.getElementById("cc1").innerHTML=account;
+    
 
      setId2(await token.methods.balanceOf(account[0]).call());
      var circulate = await vabi.methods.getCirculatingSupply().call();
@@ -246,7 +245,7 @@ setcount(count);
      var allowan = await token.methods.allowance(account[0],"0x2cFCC708e5398311c14A34Ea0A8d5871A0f33eB1").call();
      if(allowan == 0){
       setId3(true);
-      document.getElementById("swap").disabled=false;
+      //document.getElementById("swap").disabled=false;
       }
       else{
    setId3(false);
@@ -256,7 +255,7 @@ setcount(count);
       setId6(await vabi.methods.getBurnVaultBLACKBalance().call());
       }
    else{
-      document.getElementById("cc").style.visibility="true";
+     // document.getElementById("cc").style.visibility="true";
 
    }
 if(account!=0){
@@ -415,8 +414,8 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
      </div><br/>
   <div class="row">
     {
-      tid3===true ?((
-        <button class="btn-flat col-sm  btn-lg p-4" id="swap" onClick={() => setModalShow1(true)} disabled >
+      (tid3!=true&&acc!=0) ?((
+        <button class="btn-flat col-sm  btn-lg p-4" id="swap" onClick={() => setModalShow1(true)}  >
     
        Swap
     
@@ -426,7 +425,7 @@ count=`Starts in : ${t4}:${t1}:${t2}:${t3}`;
       )):
       ((
 
-        <button class="btn-flat col-sm  btn-lg p-4" id="swap" onClick={() => setModalShow1(true)}  >
+        <button class="btn-flat col-sm  btn-lg p-4" id="swap" onClick={() => setModalShow1(true)} disabled >
     
         Swap
      
