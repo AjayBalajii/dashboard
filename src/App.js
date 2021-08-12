@@ -81,9 +81,7 @@ Dashboard
 
 </Link>
  
- <Link class="navlink11"  exact to="/vault">
-Burn Vault{' '}
-       </Link>
+<a class="navlink11"   href="https://vault-mu.vercel.app/">Burn vault </a>
        <a class="navlink11"   href="https://blackstaking.vercel.app/">
 
 Staking
