@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import web3 from './web3';
 //import token from './token.js';
 import Black from './black.js';
-import Vault from './Vaultpage.js';
 import {BrowserRouter as Router , Route , Link , Switch } from "react-router-dom";
 //import history from "./utils/history";
 //import vault from './vault.js';
