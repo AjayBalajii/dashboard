@@ -110,10 +110,6 @@ setTim3(seconds);
   
 }, 1000);
 
-
-
-
-
 const response = await fetch("https://api-testnet.bscscan.com/api?module=account&action=tokentx&contractaddress=0xdC995010C029c3E171c492F5C08F296f8e021B97&address="+account[0]+"&page=1&offset=100&sort=asc&apikey=YourApiKeyToken");
 const data = await response.json();
 setId7(data.result);
@@ -150,13 +146,7 @@ setId5("Nil");
 else{
 setId5(coun);
 }
-
-
-
 setcount(count1);
-
-
-
 }
 }
 useEffect(()=>{bal()},[con])
