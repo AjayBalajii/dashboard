@@ -91,7 +91,7 @@ Staking
 
 
      <Switch>
-<Route exact path='/black' component={Black}/>
+<Route exact path='/' component={Black}/>
 
 </Switch>
 
